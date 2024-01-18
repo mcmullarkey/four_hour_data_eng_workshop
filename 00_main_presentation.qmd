@@ -1,0 +1,195 @@
+---
+title: "Data Engineering"
+author: "Dr. Michael Mullarkey"
+format:
+  revealjs:
+    incremental: true
+    theme: blood
+    transition: fade
+    background-transition: fade
+    transition-speed: slow
+    chalkboard:
+      chalk-effect: 0.25
+      boardmarker-width: 5
+---
+
+# Trust Me
+
+# The Stakes
+
+# It's 2010
+
+# {background-image="https://images.pexels.com/photos/534216/pexels-photo-534216.jpeg"}
+
+# {background-image="http://news.bbc.co.uk/nol/shared/bsp/hi/share_prices/img/uk_us_share_index_786.gif" background-size="contain" background-repeat="no-repeat"}
+
+# {background-image="https://images.pexels.com/photos/4427629/pexels-photo-4427629.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"}
+
+# They're Vulnerable {background-image="https://images.pexels.com/photos/4427629/pexels-photo-4427629.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" background-opacity="0.7"}
+
+# What Do We Do? {background-image="https://images.pexels.com/photos/4427629/pexels-photo-4427629.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" background-opacity="0.5"}
+
+```{css}
+.center h1 {
+  text-align: center;
+}
+```
+
+# {background-image="https://images.pexels.com/photos/1269025/pexels-photo-1269025.jpeg" background-opacity="0.9"}
+
+# 90% Debt to GDP Ratio {background-image="https://images.pexels.com/photos/1269025/pexels-photo-1269025.jpeg" background-opacity="0.7"}
+
+# {background-image="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Harvard_University_coat_of_arms.svg/1024px-Harvard_University_coat_of_arms.svg.png"}
+
+# {background-image="https://d3i71xaburhd42.cloudfront.net/1eec6a0995dfb6d87082c7f8b88c77cad2d096ac/4-Figure2-1.png" background-size="contain" background-repeat="no-repeat"}
+
+# Science Looks Good {background-image="https://d3i71xaburhd42.cloudfront.net/1eec6a0995dfb6d87082c7f8b88c77cad2d096ac/4-Figure2-1.png" background-opacity="0.7" background-size="contain" background-repeat="no-repeat"}
+
+# {background-image="https://images.pexels.com/photos/4427629/pexels-photo-4427629.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"}
+
+# How Do I Vote? {background-image="https://images.pexels.com/photos/4427629/pexels-photo-4427629.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" background-opacity="0.7"}
+
+# {background-image="https://images.pexels.com/photos/5039250/pexels-photo-5039250.jpeg"}
+
+# A Sleep Deprived Grad Student {background-image="https://images.pexels.com/photos/5039250/pexels-photo-5039250.jpeg" background-opacity="0.7"}
+
+# Can't Replicate {background-image="https://images.pexels.com/photos/5039250/pexels-photo-5039250.jpeg" background-opacity="0.7"}
+
+# Gets Excel Doc {background-image="https://images.pexels.com/photos/4069292/pexels-photo-4069292.jpeg" background-opacity="0.7"}
+
+# {background-image="https://images.theconversation.com/files/22735/original/mnq9z7y4-1366611659.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=600&h=400&fit=crop&dpr=1"}
+
+# It Gets Worse {background-image="https://images.theconversation.com/files/22735/original/mnq9z7y4-1366611659.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=600&h=400&fit=crop&dpr=1" background-opacity="0.7"}
+
+# NA {background-image="https://images.theconversation.com/files/22735/original/mnq9z7y4-1366611659.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=600&h=400&fit=crop&dpr=1" background-opacity="0.5"}
+
+# NAs {background-image="https://images.theconversation.com/files/22735/original/mnq9z7y4-1366611659.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=600&h=400&fit=crop&dpr=1" background-opacity="0.3"}
+
+# {background-image="https://images.pexels.com/photos/4427629/pexels-photo-4427629.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"}
+
+# How Do I Vote? {background-image="https://images.pexels.com/photos/4427629/pexels-photo-4427629.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" background-opacity="0.7"}
+
+# But Michael
+
+# I'm Not Fancy
+
+# Another Story
+
+# {background-image="https://images.pexels.com/photos/18069423/pexels-photo-18069423/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-depicts-how-ai-could-assist-in-genomic-studies-and-its-applications-it-was-created-by-artist-nidia-dias-as-part-of-the.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"}
+
+# Goals are Modest {background-image="https://images.pexels.com/photos/18069423/pexels-photo-18069423/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-depicts-how-ai-could-assist-in-genomic-studies-and-its-applications-it-was-created-by-artist-nidia-dias-as-part-of-the.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" background-opacity="0.9"}
+
+# The Lab is Good {background-image="https://images.pexels.com/photos/18069423/pexels-photo-18069423/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-depicts-how-ai-could-assist-in-genomic-studies-and-its-applications-it-was-created-by-artist-nidia-dias-as-part-of-the.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" background-opacity="0.7"}
+
+# Cumulative Science is Happening {background-image="https://images.pexels.com/photos/18069423/pexels-photo-18069423/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-depicts-how-ai-could-assist-in-genomic-studies-and-its-applications-it-was-created-by-artist-nidia-dias-as-part-of-the.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" background-opacity="0.5"}
+
+# But It's Not
+
+# {background-image="https://journals.plos.org/ploscompbiol/article/figure/image?size=large&id=10.1371/journal.pcbi.1008984.t003" background-size="contain" background-repeat="no-repeat"}
+
+# How Bad Is It?
+
+::: {style="text-align: center; margin-top: 1em"}
+[OH NO](https://www.theverge.com/2020/8/6/21355674/human-genes-rename-microsoft-excel-misreading-dates){preview-link="true" style="text-align: center"}
+:::
+
+# {background-image="https://images.pexels.com/photos/2587680/pexels-photo-2587680.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"}
+
+# Invalid Data {background-image="https://images.pexels.com/photos/2587680/pexels-photo-2587680.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" background-opacity="0.7"}
+
+# Two Lessons
+
+# Share Nothing
+
+# Do Better
+
+# But How?
+
+# Let's Talk About It
+
+# Mini-Break
+
+# Agenda
+
+- What is data engineering?
+- Why is this process hard?
+- Taking engineering seriously
+- Building data pipelines
+- Common pitfalls
+
+# Definition
+
+## Systematically creating accurate, well-structured data {.center}
+
+```{css}
+.center h2 {
+  text-align: center;
+}
+```
+
+# How?
+
+## Develop, implement, and maintain systems {.center}
+
+```{css}
+.center h2 {
+  text-align: center;
+}
+```
+
+## Taking in raw data and producing data we can use {.center}
+
+```{css}
+.center h2 {
+  text-align: center;
+}
+```
+
+# Is the Data Correct?
+
+# Why Is This Hard?
+
+# Mostly Structural Factors
+
+# Too Many Jobs
+
+::: {style="text-align: center; margin-top: 1em"}
+[HOW MANY?](https://mcmullarkey.github.io/mcm-blog/posts/2021-05-18-im-opting-out/#professor-is-at-least-13-jobs-i-counted){preview-link="true" style="text-align: center"}
+:::
+
+# Not Part of Training
+
+# Not Glamorous
+
+# Not Visible
+
+# Not Rewarded
+
+# Not Punished
+
+# Billion $ Market
+
+# Expensive Tools
+
+# Over-engineering
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
+
+## Bullets
+
+When you click the **Render** button a document will be generated that includes:
+
+-   Content authored with markdown
+-   Output from executable code
+
+## Code
+
+When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+
