@@ -28,6 +28,70 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #f8f8f2;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #f8f8f2; } /* Normal */
+    code span.al { color: #f07178; background-color: #2a0f15; font-weight: bold; } /* Alert */
+    code span.an { color: #d4d0ab; } /* Annotation */
+    code span.at { color: #00e0e0; } /* Attribute */
+    code span.bn { color: #d4d0ab; } /* BaseN */
+    code span.bu { color: #abe338; } /* BuiltIn */
+    code span.cf { color: #ffa07a; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #abe338; } /* Char */
+    code span.cn { color: #ffd700; } /* Constant */
+    code span.co { color: #f8f8f2; font-style: italic; } /* Comment */
+    code span.cv { color: #ffd700; } /* CommentVar */
+    code span.do { color: #f8f8f2; } /* Documentation */
+    code span.dt { color: #ffa07a; } /* DataType */
+    code span.dv { color: #d4d0ab; } /* DecVal */
+    code span.er { color: #f07178; text-decoration: underline; } /* Error */
+    code span.ex { color: #00e0e0; font-weight: bold; } /* Extension */
+    code span.fl { color: #d4d0ab; } /* Float */
+    code span.fu { color: #ffa07a; } /* Function */
+    code span.im { color: #abe338; } /* Import */
+    code span.in { color: #d4d0ab; } /* Information */
+    code span.kw { color: #ffa07a; font-weight: bold; } /* Keyword */
+    code span.op { color: #ffa07a; } /* Operator */
+    code span.ot { color: #00e0e0; } /* Other */
+    code span.pp { color: #dcc6e0; } /* Preprocessor */
+    code span.re { color: #00e0e0; background-color: #f8f8f2; } /* RegionMarker */
+    code span.sc { color: #abe338; } /* SpecialChar */
+    code span.ss { color: #abe338; } /* SpecialString */
+    code span.st { color: #abe338; } /* String */
+    code span.va { color: #00e0e0; } /* Variable */
+    code span.vs { color: #abe338; } /* VerbatimString */
+    code span.wa { color: #dcc6e0; } /* Warning */
   </style>
   <link rel="stylesheet" href="00_main_presentation_files/libs/revealjs/dist/theme/quarto.css" id="theme">
   <link href="00_main_presentation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -543,8 +607,8 @@
 
 </section>
 
-<section id="lets-talk-about-it" class="title-slide slide level1 center">
-<h1>Let’s Talk About It</h1>
+<section id="data-engineering" class="title-slide slide level1 center">
+<h1>Data Engineering</h1>
 
 </section>
 
@@ -558,9 +622,10 @@
 <ul>
 <li class="fragment">What is data engineering?</li>
 <li class="fragment">Why is this process hard?</li>
-<li class="fragment">Taking engineering seriously</li>
+<li class="fragment">Properly rating engineering</li>
 <li class="fragment">Building data pipelines</li>
 <li class="fragment">Common pitfalls</li>
+<li class="fragment">Q&amp;A</li>
 </ul>
 </section>
 
@@ -579,9 +644,14 @@
 </style>
 </div>
 </section></section>
+<section id="data-cleaning" class="title-slide slide level1 center">
+<h1>Data Cleaning?</h1>
+
+</section>
+
 <section>
-<section id="how" class="title-slide slide level1 center">
-<h1>How?</h1>
+<section id="not-quite" class="title-slide slide level1 center">
+<h1>Not Quite</h1>
 
 </section>
 <section id="develop-implement-and-maintain-systems" class="slide level2 center">
@@ -594,8 +664,8 @@
 </style>
 </div>
 </section>
-<section id="taking-in-raw-data-and-producing-data-we-can-use" class="slide level2 center">
-<h2>Taking in raw data and producing data we can use</h2>
+<section id="consistently-taking-in-raw-data-and-producing-usable-data" class="slide level2 center">
+<h2>Consistently taking in raw data and producing usable data</h2>
 <div class="cell">
 <style type="text/css">
 .center h2 {
@@ -604,12 +674,129 @@
 </style>
 </div>
 </section></section>
-<section id="is-the-data-correct" class="title-slide slide level1 center">
-<h1>Is the Data Correct?</h1>
+<section id="example" class="title-slide slide level1 center">
+<h1>Example</h1>
 
 </section>
 
-<section id="why-is-this-hard" class="title-slide slide level1 center">
+<section id="section-13" class="title-slide slide level1 center" data-background-image="https://images.pexels.com/photos/267394/pexels-photo-267394.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1">
+<h1></h1>
+
+</section>
+
+<section id="raw-data" class="title-slide slide level1 center" data-background-image="https://images.pexels.com/photos/267394/pexels-photo-267394.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" data-background-opacity="0.7">
+<h1>Raw Data?</h1>
+
+</section>
+
+<section id="section-14" class="title-slide slide level1 center" data-background-image="https://www.mdpi.com/informatics/informatics-05-00029/article_deploy/html/images/informatics-05-00029-g002a.png" data-background-size="contain" data-background-repeat="no-repeat">
+<h1></h1>
+
+</section>
+
+<section id="thats-a-lie" class="title-slide slide level1 center" data-background-image="https://www.mdpi.com/informatics/informatics-05-00029/article_deploy/html/images/informatics-05-00029-g002a.png" data-background-size="contain" data-background-repeat="no-repeat" data-background-opacity="0.7">
+<h1>That’s a Lie</h1>
+
+</section>
+
+<section id="how-do-i-know" class="title-slide slide level1 center" data-background-image="https://www.mdpi.com/informatics/informatics-05-00029/article_deploy/html/images/informatics-05-00029-g002a.png" data-background-size="contain" data-background-repeat="no-repeat" data-background-opacity="0.5">
+<h1>How Do I Know?</h1>
+
+</section>
+
+<section id="section-15" class="title-slide slide level1 center" data-background-image="https://www.mdpi.com/informatics/informatics-05-00029/article_deploy/html/images/informatics-05-00029-g002a.png" data-background-size="contain" data-background-repeat="no-repeat">
+<h1></h1>
+
+</section>
+
+<section id="actual-raw-data" class="title-slide slide level1 center" data-background-image="https://www.mdpi.com/informatics/informatics-05-00029/article_deploy/html/images/informatics-05-00029-g002a.png" data-background-size="contain" data-background-repeat="no-repeat" data-background-opacity="0.7">
+<h1>Actual Raw Data?</h1>
+
+</section>
+
+<section id="section-16" class="title-slide slide level1 center" data-background-image="https://images.pexels.com/photos/1793525/pexels-photo-1793525.jpeg">
+<h1></h1>
+
+</section>
+
+<section id="theres-whole-fields" class="title-slide slide level1 center" data-background-image="https://images.pexels.com/photos/1793525/pexels-photo-1793525.jpeg" data-background-opacity="0.7">
+<h1>There’s Whole Fields</h1>
+
+</section>
+
+<section id="but-michael-1" class="title-slide slide level1 center">
+<h1>But Michael</h1>
+
+</section>
+
+<section id="section-17" class="title-slide slide level1 center" data-background-image="https://images.pexels.com/photos/5699516/pexels-photo-5699516.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1">
+<h1></h1>
+
+</section>
+
+<section id="i-do-surveys" class="title-slide slide level1 center" data-background-image="https://images.pexels.com/photos/5699516/pexels-photo-5699516.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" data-background-opacity="0.7">
+<h1>I Do Surveys</h1>
+
+</section>
+
+<section id="section-18" class="title-slide slide level1 center" data-background-image="https://images.pexels.com/photos/769525/pexels-photo-769525.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1">
+<h1></h1>
+
+</section>
+
+<section id="might-be-harder" class="title-slide slide level1 center" data-background-image="https://images.pexels.com/photos/769525/pexels-photo-769525.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" data-background-opacity="0.7">
+<h1>Might Be Harder</h1>
+
+</section>
+
+<section id="im-so-sorry" class="title-slide slide level1 center">
+<h1>I’m So Sorry</h1>
+<div style="text-align: center; margin-top: 1em">
+<p><a href="https://www.qualtrics.com/support/survey-platform/survey-module/question-options/recode-values/" data-preview-link="true" style="text-align: center">QULATRICS DOES WHAT?</a></p>
+</div>
+</section>
+
+<section id="yikes" class="title-slide slide level1 center">
+<h1>Yikes</h1>
+
+</section>
+
+<section id="section-19" class="title-slide slide level1 center" data-background-image="https://images.pexels.com/photos/2762083/pexels-photo-2762083.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1">
+<h1></h1>
+
+</section>
+
+<section id="be-honest" class="title-slide slide level1 center" data-background-image="https://images.pexels.com/photos/2762083/pexels-photo-2762083.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" data-background-opacity="0.7">
+<h1>Be Honest</h1>
+
+</section>
+
+<section id="how-many-csvs" class="title-slide slide level1 center" data-background-image="https://images.pexels.com/photos/2762083/pexels-photo-2762083.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" data-background-opacity="0.5">
+<h1>How Many CSVS?</h1>
+
+</section>
+
+<section id="section-20" class="title-slide slide level1 center" data-background-image="https://images.pexels.com/photos/10768025/pexels-photo-10768025.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1">
+<h1></h1>
+
+</section>
+
+<section id="need-systems" class="title-slide slide level1 center" data-background-image="https://images.pexels.com/photos/10768025/pexels-photo-10768025.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" data-background-opacity="0.7">
+<h1>Need Systems</h1>
+
+</section>
+
+<section id="mini-break-1" class="title-slide slide level1 center">
+<h1>Mini-Break?</h1>
+
+</section>
+
+<section id="section-21" class="title-slide slide level1 center" data-background-image="https://images.pexels.com/photos/3345882/pexels-photo-3345882.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1">
+<h1></h1>
+
+</section>
+
+<section id="why-is-this-hard" class="title-slide slide level1 center" data-background-image="https://images.pexels.com/photos/3345882/pexels-photo-3345882.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" data-background-opacity="0.7">
 <h1>Why Is This Hard?</h1>
 
 </section>
@@ -619,21 +806,16 @@
 
 </section>
 
-<section id="too-many-jobs" class="title-slide slide level1 center">
-<h1>Too Many Jobs</h1>
-<div style="text-align: center; margin-top: 1em">
-<p><a href="https://mcmullarkey.github.io/mcm-blog/posts/2021-05-18-im-opting-out/#professor-is-at-least-13-jobs-i-counted" data-preview-link="true" style="text-align: center">HOW MANY?</a></p>
-</div>
-</section>
-
 <section id="not-part-of-training" class="title-slide slide level1 center">
 <h1>Not Part of Training</h1>
 
 </section>
 
-<section id="not-glamorous" class="title-slide slide level1 center">
-<h1>Not Glamorous</h1>
-
+<section id="too-many-jobs" class="title-slide slide level1 center">
+<h1>Too Many Jobs</h1>
+<div style="text-align: center; margin-top: 1em">
+<p><a href="https://mcmullarkey.github.io/mcm-blog/posts/2021-05-18-im-opting-out/#professor-is-at-least-13-jobs-i-counted" data-preview-link="true" style="text-align: center">HOW MANY?</a></p>
+</div>
 </section>
 
 <section id="not-visible" class="title-slide slide level1 center">
@@ -651,45 +833,1470 @@
 
 </section>
 
-<section id="billion-market" class="title-slide slide level1 center">
-<h1>Billion $ Market</h1>
+<section id="not-glamorous" class="title-slide slide level1 center">
+<h1>Not Glamorous</h1>
 
 </section>
 
-<section id="expensive-tools" class="title-slide slide level1 center">
-<h1>Expensive Tools</h1>
+<section id="at-the-same-time" class="title-slide slide level1 center">
+<h1>At the Same Time</h1>
 
 </section>
 
-<section>
+<section id="highly-prioritized-in-industry" class="title-slide slide level1 center">
+<h1>Highly Prioritized in Industry</h1>
+
+</section>
+
+<section id="billions-market" class="title-slide slide level1 center">
+<h1>Billion(s) $ Market</h1>
+
+</section>
+
+<section id="selection-effects" class="title-slide slide level1 center">
+<h1>Selection Effects?</h1>
+
+</section>
+
+<section id="lots-of-tools" class="title-slide slide level1 center">
+<h1>Lots of Tools</h1>
+
+</section>
+
+<section id="lots-of-expensive-tools" class="title-slide slide level1 center">
+<h1>Lots of Expensive Tools</h1>
+
+</section>
+
 <section id="over-engineering" class="title-slide slide level1 center">
 <h1>Over-engineering</h1>
 
 </section>
-<section id="quarto" class="slide level2">
-<h2>Quarto</h2>
-<p>Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <a href="https://quarto.org/docs/presentations/" class="uri">https://quarto.org/docs/presentations/</a>.</p>
+
+<section id="are-we-screwed" class="title-slide slide level1 center">
+<h1>Are We Screwed?</h1>
+
 </section>
-<section id="bullets" class="slide level2">
-<h2>Bullets</h2>
-<p>When you click the <strong>Render</strong> button a document will be generated that includes:</p>
-<ul>
-<li class="fragment">Content authored with markdown</li>
-<li class="fragment">Output from executable code</li>
-</ul>
+
+<section id="nope" class="title-slide slide level1 center">
+<h1>Nope!</h1>
+
 </section>
-<section id="code" class="slide level2">
-<h2>Code</h2>
-<p>When you click the <strong>Render</strong> button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:</p>
+
+<section id="i-got-yall" class="title-slide slide level1 center">
+<h1>I Got Y’all</h1>
+<div style="text-align: center; margin-top: 1em">
+<p><a href="https://mcmullarkey.github.io/data_engineering_and_validation_book/" data-preview-link="true" style="text-align: center">OPEN ACCESS TEXTBOOK</a></p>
+</div>
+</section>
+
+<section id="can-reset-org-cultures" class="title-slide slide level1 center">
+<h1>Can Reset Org Cultures</h1>
+
+</section>
+
+<section id="make-visible" class="title-slide slide level1 center">
+<h1>Make Visible</h1>
+
+</section>
+
+<section id="reward-good-process" class="title-slide slide level1 center">
+<h1>Reward Good Process</h1>
+
+</section>
+
+<section id="implement-engineering-principles" class="title-slide slide level1 center">
+<h1>Implement Engineering Principles</h1>
+
+</section>
+
+<section id="break" class="title-slide slide level1 center">
+<h1>Break</h1>
+
+</section>
+
+<section id="we-underrate-engineering" class="title-slide slide level1 center">
+<h1>We Underrate Engineering</h1>
+
+</section>
+
+<section id="section-22" class="title-slide slide level1 center" data-background-image="https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1">
+<h1></h1>
+
+</section>
+
+<section id="what-is-coding-for" class="title-slide slide level1 center" data-background-image="https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" data-background-opacity="0.7">
+<h1>What is Coding For?</h1>
+
+</section>
+
+<section id="section-23" class="title-slide slide level1 center" data-background-image="https://images.pexels.com/photos/6664246/pexels-photo-6664246.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1">
+<h1></h1>
+
+</section>
+
+<section id="uncertain" class="title-slide slide level1 center" data-background-image="https://images.pexels.com/photos/6664246/pexels-photo-6664246.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" data-background-opacity="0.7">
+<h1>Uncertain</h1>
+
+</section>
+
+<section id="section-24" class="title-slide slide level1 center" data-background-image="https://images.pexels.com/photos/585418/pexels-photo-585418.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1">
+<h1></h1>
+
+</section>
+
+<section id="certain" class="title-slide slide level1 center" data-background-image="https://images.pexels.com/photos/585418/pexels-photo-585418.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" data-background-opacity="0.7">
+<h1>Certain</h1>
+
+</section>
+
+<section id="section-25" class="title-slide slide level1 center" data-background-image="https://images.pexels.com/photos/220762/pexels-photo-220762.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1">
+<h1></h1>
+
+</section>
+
+<section id="to-our-advantage" class="title-slide slide level1 center" data-background-image="https://images.pexels.com/photos/220762/pexels-photo-220762.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" data-background-opacity="0.7">
+<h1>To Our Advantage</h1>
+
+</section>
+
+<section id="implement-engineering-principles-1" class="title-slide slide level1 center">
+<h1>Implement Engineering Principles</h1>
+
+</section>
+
+<section id="section-26" class="title-slide slide level1 center" data-background-image="https://images.pexels.com/photos/225250/pexels-photo-225250.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1">
+<h1></h1>
+
+</section>
+
+<section id="nope-1" class="title-slide slide level1 center" data-background-image="https://images.pexels.com/photos/225250/pexels-photo-225250.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" data-background-opacity="0.7">
+<h1>Nope</h1>
+
+</section>
+
+<section id="engineering-principles" class="title-slide slide level1 center">
+<h1>Engineering Principles</h1>
+
+</section>
+
+<section id="stop-coding" class="title-slide slide level1 center">
+<h1>Stop Coding</h1>
+
+</section>
+
+<section id="dont-repeat-yourself" class="title-slide slide level1 center">
+<h1>Don’t Repeat Yourself</h1>
+
+</section>
+
+<section id="do-one-thing-well" class="title-slide slide level1 center">
+<h1>Do One Thing Well</h1>
+
+</section>
+
+<section id="assume-failure" class="title-slide slide level1 center">
+<h1>Assume Failure</h1>
+
+</section>
+
+<section id="automate" class="title-slide slide level1 center">
+<h1>Automate</h1>
+
+</section>
+
+<section id="stop-coding-1" class="title-slide slide level1 center">
+<h1>Stop Coding</h1>
+
+</section>
+
+<section id="look-at-data-now" class="title-slide slide level1 center">
+<h1>Look at Data Now</h1>
+
+</section>
+
+<section id="section-27" class="title-slide slide level1 center">
+<h1></h1>
+<div class="cell">
+
+</div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<pre><code># A tibble: 6 × 3
+  individual_id date_egg   species                                  
+  &lt;chr&gt;         &lt;date&gt;     &lt;chr&gt;                                    
+1 N100A1        2009-11-21 Chinstrap penguin (Pygoscelis antarctica)
+2 N100A2        2009-11-21 Chinstrap penguin (Pygoscelis antarctica)
+3 N10A1         2007-11-16 Adelie Penguin (Pygoscelis adeliae)      
+4 N10A2         2007-11-16 Adelie Penguin (Pygoscelis adeliae)      
+5 N11A1         2008-11-09 Gentoo penguin (Pygoscelis papua)        
+6 N11A1         2007-11-12 Adelie Penguin (Pygoscelis adeliae)      </code></pre>
 </div>
 </div>
+</section>
+
+<section id="sketch-ideal-data" class="title-slide slide level1 center">
+<h1>Sketch Ideal Data</h1>
+
+</section>
+
+<section id="section-28" class="title-slide slide level1 center">
+<h1></h1>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+  individual_id date_egg   species                                  
+  &lt;chr&gt;         &lt;date&gt;     &lt;chr&gt;                                    
+1 N100A1        2009-11-21 Chinstrap penguin (Pygoscelis antarctica)
+2 N100A2        2009-11-21 Chinstrap penguin (Pygoscelis antarctica)
+3 N10A1         2007-11-16 Adelie Penguin (Pygoscelis adeliae)      
+4 N10A2         2007-11-16 Adelie Penguin (Pygoscelis adeliae)      
+5 N11A1         2008-11-09 Gentoo penguin (Pygoscelis papua)        
+6 N11A2         2008-11-09 Gentoo penguin (Pygoscelis papua)        </code></pre>
+</div>
+</div>
+</section>
+
+<section id="write-step-by-step" class="title-slide slide level1 center">
+<h1>Write Step by Step</h1>
+
+</section>
+
+<section id="can-use-made-up-functions" class="title-slide slide level1 center">
+<h1>Can Use Made-up Functions</h1>
+
+</section>
+
+<section id="section-29" class="title-slide slide level1 center">
+<h1></h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># I have data with duplicate IDs in it right now</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="co"># non_duplicated_data &lt;- penguins_raw %&gt;% </span></span>
+<span id="cb3-4"><a href="#cb3-4"></a>  <span class="co"># disapper_duplicates(most_recent = TRUE, keep_everything = TRUE)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+
+<section id="saves-time" class="title-slide slide level1 center">
+<h1>Saves Time</h1>
+
+</section>
+
+<section id="good-for-learning" class="title-slide slide level1 center">
+<h1>Good for Learning</h1>
+
+</section>
+
+<section id="by-the-way" class="title-slide slide level1 center">
+<h1>By the Way</h1>
+
+</section>
+
+<section id="section-30" class="title-slide slide level1 center">
+<h1></h1>
+<div class="sourceCode" id="cb4" data-code-line-numbers="2-5,7|6|5|5-6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a></span>
+<span id="cb4-2"><a href="#cb4-2"></a>penguins_raw <span class="sc">%&gt;%</span> </span>
+<span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">select</span>(individual_id, date_egg, species) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-5"><a href="#cb4-5"></a>  <span class="fu">arrange</span>(individual_id, <span class="fu">desc</span>(date_egg)) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-6"><a href="#cb4-6"></a>  <span class="fu">distinct</span>(individual_id, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-7"><a href="#cb4-7"></a>  <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="dont-repeat-yourself-1" class="title-slide slide level1 center">
+<h1>Don’t Repeat Yourself</h1>
+
+</section>
+
+<section id="section-31" class="title-slide slide level1 center">
+<h1></h1>
+<div class="sourceCode" id="cb5" data-code-line-numbers="2-7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a></span>
+<span id="cb5-2"><a href="#cb5-2"></a>penguins_raw <span class="sc">%&gt;%</span> </span>
+<span id="cb5-3"><a href="#cb5-3"></a>  <span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb5-4"><a href="#cb5-4"></a>  <span class="fu">select</span>(individual_id, date_egg, species) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-5"><a href="#cb5-5"></a>  <span class="fu">arrange</span>(individual_id, <span class="fu">desc</span>(date_egg)) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-6"><a href="#cb5-6"></a>  <span class="fu">distinct</span>(individual_id, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-7"><a href="#cb5-7"></a>  <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="section-32" class="title-slide slide level1 center">
+<h1></h1>
+<div class="sourceCode" id="cb6" data-code-line-numbers="9-14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a></span>
+<span id="cb6-2"><a href="#cb6-2"></a>penguins_raw <span class="sc">%&gt;%</span> </span>
+<span id="cb6-3"><a href="#cb6-3"></a>  <span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb6-4"><a href="#cb6-4"></a>  <span class="fu">select</span>(individual_id, date_egg, species) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-5"><a href="#cb6-5"></a>  <span class="fu">arrange</span>(individual_id, <span class="fu">desc</span>(date_egg)) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-6"><a href="#cb6-6"></a>  <span class="fu">distinct</span>(individual_id, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-7"><a href="#cb6-7"></a>  <span class="fu">head</span>()</span>
+<span id="cb6-8"><a href="#cb6-8"></a></span>
+<span id="cb6-9"><a href="#cb6-9"></a>penguins_raw_new <span class="sc">%&gt;%</span> </span>
+<span id="cb6-10"><a href="#cb6-10"></a>  <span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb6-11"><a href="#cb6-11"></a>  <span class="fu">select</span>(individual_id, date_egg, species) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-12"><a href="#cb6-12"></a>  <span class="fu">arrange</span>(individual_id, <span class="fu">desc</span>(date_egg)) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-13"><a href="#cb6-13"></a>  <span class="fu">distinct</span>(individual_id, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-14"><a href="#cb6-14"></a>  <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="section-33" class="title-slide slide level1 center">
+<h1></h1>
+<div class="sourceCode" id="cb7" data-code-line-numbers="16-21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a></span>
+<span id="cb7-2"><a href="#cb7-2"></a>penguins_raw <span class="sc">%&gt;%</span> </span>
+<span id="cb7-3"><a href="#cb7-3"></a>  <span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb7-4"><a href="#cb7-4"></a>  <span class="fu">select</span>(individual_id, date_egg, species) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-5"><a href="#cb7-5"></a>  <span class="fu">arrange</span>(individual_id, <span class="fu">desc</span>(date_egg)) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-6"><a href="#cb7-6"></a>  <span class="fu">distinct</span>(individual_id, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-7"><a href="#cb7-7"></a>  <span class="fu">head</span>()</span>
+<span id="cb7-8"><a href="#cb7-8"></a></span>
+<span id="cb7-9"><a href="#cb7-9"></a>penguins_raw_new <span class="sc">%&gt;%</span> </span>
+<span id="cb7-10"><a href="#cb7-10"></a>  <span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb7-11"><a href="#cb7-11"></a>  <span class="fu">select</span>(individual_id, date_egg, species) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-12"><a href="#cb7-12"></a>  <span class="fu">arrange</span>(individual_id, <span class="fu">desc</span>(date_egg)) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-13"><a href="#cb7-13"></a>  <span class="fu">distinct</span>(individual_id, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-14"><a href="#cb7-14"></a>  <span class="fu">head</span>()</span>
+<span id="cb7-15"><a href="#cb7-15"></a></span>
+<span id="cb7-16"><a href="#cb7-16"></a>penguins_raw_old <span class="sc">%&gt;%</span> </span>
+<span id="cb7-17"><a href="#cb7-17"></a>  <span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb7-18"><a href="#cb7-18"></a>  <span class="fu">select</span>(individual_id, date_egg, species) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-19"><a href="#cb7-19"></a>  <span class="fu">arrange</span>(individual_id, <span class="fu">desc</span>(date_egg)) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-20"><a href="#cb7-20"></a>  <span class="fu">distinct</span>(individual_id, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-21"><a href="#cb7-21"></a>  <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="one-change" class="title-slide slide level1 center">
+<h1>One Change?</h1>
+
+</section>
+
+<section id="section-34" class="title-slide slide level1 center">
+<h1></h1>
+<div class="sourceCode" id="cb8" data-code-line-numbers="5,12|19|5,12,19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a></span>
+<span id="cb8-2"><a href="#cb8-2"></a>penguins_raw <span class="sc">%&gt;%</span> </span>
+<span id="cb8-3"><a href="#cb8-3"></a>  <span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb8-4"><a href="#cb8-4"></a>  <span class="fu">select</span>(individual_id, date_egg, species) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-5"><a href="#cb8-5"></a>  <span class="fu">arrange</span>(individual_id, date_egg) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-6"><a href="#cb8-6"></a>  <span class="fu">distinct</span>(individual_id, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-7"><a href="#cb8-7"></a>  <span class="fu">head</span>()</span>
+<span id="cb8-8"><a href="#cb8-8"></a></span>
+<span id="cb8-9"><a href="#cb8-9"></a>penguins_raw_new <span class="sc">%&gt;%</span> </span>
+<span id="cb8-10"><a href="#cb8-10"></a>  <span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb8-11"><a href="#cb8-11"></a>  <span class="fu">select</span>(individual_id, date_egg, species) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-12"><a href="#cb8-12"></a>  <span class="fu">arrange</span>(individual_id, date_egg) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-13"><a href="#cb8-13"></a>  <span class="fu">distinct</span>(individual_id, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-14"><a href="#cb8-14"></a>  <span class="fu">head</span>()</span>
+<span id="cb8-15"><a href="#cb8-15"></a></span>
+<span id="cb8-16"><a href="#cb8-16"></a>penguins_raw_old <span class="sc">%&gt;%</span> </span>
+<span id="cb8-17"><a href="#cb8-17"></a>  <span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb8-18"><a href="#cb8-18"></a>  <span class="fu">select</span>(individual_id, date_egg, species) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-19"><a href="#cb8-19"></a>  <span class="fu">arrange</span>(individual_id, <span class="fu">desc</span>(date_egg)) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-20"><a href="#cb8-20"></a>  <span class="fu">distinct</span>(individual_id, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-21"><a href="#cb8-21"></a>  <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="more-mistakes" class="title-slide slide level1 center">
+<h1>More Mistakes</h1>
+
+</section>
+
+<section id="more-work" class="title-slide slide level1 center">
+<h1>More Work</h1>
+
+</section>
+
+<section id="instead" class="title-slide slide level1 center">
+<h1>Instead</h1>
+
+</section>
+
+<section id="write-a-function" class="title-slide slide level1 center">
+<h1>Write a Function</h1>
+
+</section>
+
+<section id="how" class="title-slide slide level1 center">
+<h1>How?</h1>
+
+</section>
+
+<section id="do-it-once" class="title-slide slide level1 center">
+<h1>Do It Once</h1>
+
+</section>
+
+<section id="section-35" class="title-slide slide level1 center">
+<h1></h1>
+<div class="sourceCode" id="cb9" data-code-line-numbers="2-7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a></span>
+<span id="cb9-2"><a href="#cb9-2"></a>penguins_raw <span class="sc">%&gt;%</span> </span>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb9-4"><a href="#cb9-4"></a>  <span class="fu">select</span>(individual_id, date_egg, species) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-5"><a href="#cb9-5"></a>  <span class="fu">arrange</span>(individual_id, <span class="fu">desc</span>(date_egg)) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-6"><a href="#cb9-6"></a>  <span class="fu">distinct</span>(individual_id, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-7"><a href="#cb9-7"></a>  <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="learn-syntax" class="title-slide slide level1 center">
+<h1>Learn Syntax</h1>
+
+</section>
+
+<section id="section-36" class="title-slide slide level1 center">
+<h1></h1>
+<div class="sourceCode" id="cb10" data-code-line-numbers="3-7,12-16|2,11|9,11|9,11,18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a></span>
+<span id="cb10-2"><a href="#cb10-2"></a>penguins_raw <span class="sc">%&gt;%</span> </span>
+<span id="cb10-3"><a href="#cb10-3"></a>  <span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb10-4"><a href="#cb10-4"></a>  <span class="fu">select</span>(individual_id, date_egg, species) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-5"><a href="#cb10-5"></a>  <span class="fu">arrange</span>(individual_id, <span class="fu">desc</span>(date_egg)) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-6"><a href="#cb10-6"></a>  <span class="fu">distinct</span>(individual_id, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-7"><a href="#cb10-7"></a>  <span class="fu">head</span>()</span>
+<span id="cb10-8"><a href="#cb10-8"></a></span>
+<span id="cb10-9"><a href="#cb10-9"></a>clean_penguins <span class="ot">&lt;-</span> <span class="cf">function</span>(.data) {</span>
+<span id="cb10-10"><a href="#cb10-10"></a>  </span>
+<span id="cb10-11"><a href="#cb10-11"></a>  .data <span class="sc">%&gt;%</span> </span>
+<span id="cb10-12"><a href="#cb10-12"></a>    <span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb10-13"><a href="#cb10-13"></a>    <span class="fu">select</span>(individual_id, date_egg, species) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-14"><a href="#cb10-14"></a>    <span class="fu">arrange</span>(individual_id, <span class="fu">desc</span>(date_egg)) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-15"><a href="#cb10-15"></a>    <span class="fu">distinct</span>(individual_id, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-16"><a href="#cb10-16"></a>    <span class="fu">head</span>()</span>
+<span id="cb10-17"><a href="#cb10-17"></a>  </span>
+<span id="cb10-18"><a href="#cb10-18"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="use-it-many-times" class="title-slide slide level1 center">
+<h1>Use It Many Times</h1>
+
+</section>
+
+<section id="section-37" class="title-slide slide level1 center">
+<h1></h1>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a></span>
+<span id="cb11-2"><a href="#cb11-2"></a>clean_penguins <span class="ot">&lt;-</span> <span class="cf">function</span>(.data) {</span>
+<span id="cb11-3"><a href="#cb11-3"></a>  </span>
+<span id="cb11-4"><a href="#cb11-4"></a>  .data <span class="sc">%&gt;%</span> </span>
+<span id="cb11-5"><a href="#cb11-5"></a>    <span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb11-6"><a href="#cb11-6"></a>    <span class="fu">select</span>(individual_id, date_egg, species) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-7"><a href="#cb11-7"></a>    <span class="fu">arrange</span>(individual_id, <span class="fu">desc</span>(date_egg)) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-8"><a href="#cb11-8"></a>    <span class="fu">distinct</span>(individual_id, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-9"><a href="#cb11-9"></a>    <span class="fu">head</span>()</span>
+<span id="cb11-10"><a href="#cb11-10"></a>  </span>
+<span id="cb11-11"><a href="#cb11-11"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="section-38" class="title-slide slide level1 center">
+<h1></h1>
+<div class="sourceCode" id="cb12" data-code-line-numbers="7|3-5|3,7|4,7|5,7|3-5,7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="fu">map</span>(<span class="fu">list</span>(</span>
+<span id="cb12-3"><a href="#cb12-3"></a>         penguins_raw, </span>
+<span id="cb12-4"><a href="#cb12-4"></a>         penguins_raw_new,</span>
+<span id="cb12-5"><a href="#cb12-5"></a>         penguins_raw_old</span>
+<span id="cb12-6"><a href="#cb12-6"></a>      ),</span>
+<span id="cb12-7"><a href="#cb12-7"></a>    <span class="sc">~</span><span class="fu">clean_penguins</span>(.x)</span>
+<span id="cb12-8"><a href="#cb12-8"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="section-39" class="title-slide slide level1 center">
+<h1></h1>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>clean_penguins <span class="ot">&lt;-</span> <span class="cf">function</span>(.data) {</span>
+<span id="cb13-2"><a href="#cb13-2"></a>  </span>
+<span id="cb13-3"><a href="#cb13-3"></a>  .data <span class="sc">%&gt;%</span> </span>
+<span id="cb13-4"><a href="#cb13-4"></a>    <span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb13-5"><a href="#cb13-5"></a>    <span class="fu">select</span>(individual_id, date_egg, species) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-6"><a href="#cb13-6"></a>    <span class="fu">arrange</span>(individual_id, <span class="fu">desc</span>(date_egg)) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-7"><a href="#cb13-7"></a>    <span class="fu">distinct</span>(individual_id, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-8"><a href="#cb13-8"></a>    <span class="fu">head</span>()</span>
+<span id="cb13-9"><a href="#cb13-9"></a>  </span>
+<span id="cb13-10"><a href="#cb13-10"></a>}</span>
+<span id="cb13-11"><a href="#cb13-11"></a></span>
+<span id="cb13-12"><a href="#cb13-12"></a><span class="fu">map</span>(<span class="fu">list</span>(penguins_raw, </span>
+<span id="cb13-13"><a href="#cb13-13"></a>         penguins_raw_new,</span>
+<span id="cb13-14"><a href="#cb13-14"></a>         penguins_raw_old),</span>
+<span id="cb13-15"><a href="#cb13-15"></a>    <span class="sc">~</span><span class="fu">clean_penguins</span>(.x))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+# A tibble: 6 × 3
+  individual_id date_egg   species                                  
+  &lt;chr&gt;         &lt;date&gt;     &lt;chr&gt;                                    
+1 N100A1        2009-11-21 Chinstrap penguin (Pygoscelis antarctica)
+2 N100A2        2009-11-21 Chinstrap penguin (Pygoscelis antarctica)
+3 N10A1         2007-11-16 Adelie Penguin (Pygoscelis adeliae)      
+4 N10A2         2007-11-16 Adelie Penguin (Pygoscelis adeliae)      
+5 N11A1         2008-11-09 Gentoo penguin (Pygoscelis papua)        
+6 N11A2         2008-11-09 Gentoo penguin (Pygoscelis papua)        
+
+[[2]]
+# A tibble: 6 × 3
+  individual_id date_egg   species                            
+  &lt;chr&gt;         &lt;date&gt;     &lt;chr&gt;                              
+1 N11A1         2007-11-12 Adelie Penguin (Pygoscelis adeliae)
+2 N11A2         2008-11-09 Gentoo penguin (Pygoscelis papua)  
+3 N13A1         2007-11-10 Adelie Penguin (Pygoscelis adeliae)
+4 N13A2         2009-11-20 Gentoo penguin (Pygoscelis papua)  
+5 N14A2         2009-11-25 Gentoo penguin (Pygoscelis papua)  
+6 N15A1         2009-11-25 Gentoo penguin (Pygoscelis papua)  
+
+[[3]]
+# A tibble: 6 × 3
+  individual_id date_egg   species                                  
+  &lt;chr&gt;         &lt;date&gt;     &lt;chr&gt;                                    
+1 N100A2        2009-11-21 Chinstrap penguin (Pygoscelis antarctica)
+2 N12A1         2007-11-12 Adelie Penguin (Pygoscelis adeliae)      
+3 N12A2         2007-11-12 Adelie Penguin (Pygoscelis adeliae)      
+4 N14A1         2009-11-25 Gentoo penguin (Pygoscelis papua)        
+5 N15A1         2009-11-25 Gentoo penguin (Pygoscelis papua)        
+6 N16A2         2008-11-03 Gentoo penguin (Pygoscelis papua)        </code></pre>
+</div>
+</div>
+</section>
+
+<section id="we-can-do-even-better" class="title-slide slide level1 center">
+<h1>We Can Do Even Better</h1>
+
+</section>
+
+<section id="do-one-thing-well-1" class="title-slide slide level1 center">
+<h1>Do One Thing Well</h1>
+
+</section>
+
+<section id="a-lot-of-functions-look-like" class="title-slide slide level1 center">
+<h1>A Lot of Functions Look Like</h1>
+
+</section>
+
+<section id="section-40" class="title-slide slide level1 center">
+<h1></h1>
+<div class="sourceCode" id="cb15" data-code-line-numbers="1-20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a></span>
+<span id="cb15-2"><a href="#cb15-2"></a>do_it_all <span class="ot">&lt;-</span> <span class="cf">function</span>(.data) {</span>
+<span id="cb15-3"><a href="#cb15-3"></a>  </span>
+<span id="cb15-4"><a href="#cb15-4"></a>  .data <span class="sc">%&gt;%</span> </span>
+<span id="cb15-5"><a href="#cb15-5"></a>    <span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb15-6"><a href="#cb15-6"></a>    <span class="fu">select</span>(individual_id, date_egg, </span>
+<span id="cb15-7"><a href="#cb15-7"></a>           species, flipper_length_mm,</span>
+<span id="cb15-8"><a href="#cb15-8"></a>           island) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-9"><a href="#cb15-9"></a>    <span class="fu">arrange</span>(individual_id, <span class="fu">desc</span>(date_egg)) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-10"><a href="#cb15-10"></a>    <span class="fu">distinct</span>(individual_id, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-11"><a href="#cb15-11"></a>    <span class="fu">group_by</span>(island) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-12"><a href="#cb15-12"></a>    <span class="fu">summarise</span>(</span>
+<span id="cb15-13"><a href="#cb15-13"></a>      <span class="at">mean_flipper_length =</span> <span class="fu">mean</span>(flipper_length_mm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb15-14"><a href="#cb15-14"></a>      <span class="at">sd_flipper_length =</span> <span class="fu">sd</span>(flipper_length_mm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb15-15"><a href="#cb15-15"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-16"><a href="#cb15-16"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_flipper_length), <span class="at">.by_group =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-17"><a href="#cb15-17"></a>    <span class="fu">slice_max</span>(mean_flipper_length) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-18"><a href="#cb15-18"></a>    <span class="fu">pull</span>(island)</span>
+<span id="cb15-19"><a href="#cb15-19"></a>  </span>
+<span id="cb15-20"><a href="#cb15-20"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Biscoe"</code></pre>
+</div>
+</div>
+</section>
+
+<section id="hard-to-read" class="title-slide slide level1 center">
+<h1>Hard to Read</h1>
+
+</section>
+
+<section id="hard-to-debug" class="title-slide slide level1 center">
+<h1>Hard to Debug</h1>
+
+</section>
+
+<section id="break-it-down" class="title-slide slide level1 center">
+<h1>Break it Down</h1>
+
+</section>
+
+<section id="section-41" class="title-slide slide level1 center">
+<h1></h1>
+<div class="sourceCode" id="cb17" data-code-line-numbers="1-20|4-8|9,10|11-16|17-18|4-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a></span>
+<span id="cb17-2"><a href="#cb17-2"></a>do_it_all <span class="ot">&lt;-</span> <span class="cf">function</span>(.data) {</span>
+<span id="cb17-3"><a href="#cb17-3"></a>  </span>
+<span id="cb17-4"><a href="#cb17-4"></a>  .data <span class="sc">%&gt;%</span> </span>
+<span id="cb17-5"><a href="#cb17-5"></a>    <span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb17-6"><a href="#cb17-6"></a>    <span class="fu">select</span>(individual_id, date_egg, </span>
+<span id="cb17-7"><a href="#cb17-7"></a>           species, flipper_length_mm,</span>
+<span id="cb17-8"><a href="#cb17-8"></a>           island) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-9"><a href="#cb17-9"></a>    <span class="fu">arrange</span>(individual_id, <span class="fu">desc</span>(date_egg)) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-10"><a href="#cb17-10"></a>    <span class="fu">distinct</span>(individual_id, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-11"><a href="#cb17-11"></a>    <span class="fu">group_by</span>(island) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-12"><a href="#cb17-12"></a>    <span class="fu">summarise</span>(</span>
+<span id="cb17-13"><a href="#cb17-13"></a>      <span class="at">mean_flipper_length =</span> <span class="fu">mean</span>(flipper_length_mm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb17-14"><a href="#cb17-14"></a>      <span class="at">sd_flipper_length =</span> <span class="fu">sd</span>(flipper_length_mm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb17-15"><a href="#cb17-15"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-16"><a href="#cb17-16"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_flipper_length), <span class="at">.by_group =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-17"><a href="#cb17-17"></a>    <span class="fu">slice_max</span>(mean_flipper_length) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-18"><a href="#cb17-18"></a>    <span class="fu">pull</span>(island)</span>
+<span id="cb17-19"><a href="#cb17-19"></a>  </span>
+<span id="cb17-20"><a href="#cb17-20"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="section-42" class="title-slide slide level1 center">
+<h1></h1>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a></span>
+<span id="cb18-2"><a href="#cb18-2"></a>select_vars <span class="ot">&lt;-</span> <span class="cf">function</span>(.data, vars_to_select) {</span>
+<span id="cb18-3"><a href="#cb18-3"></a>  </span>
+<span id="cb18-4"><a href="#cb18-4"></a>  .data <span class="sc">%&gt;%</span> </span>
+<span id="cb18-5"><a href="#cb18-5"></a>    <span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb18-6"><a href="#cb18-6"></a>    <span class="fu">select</span>(<span class="fu">any_of</span>(vars_to_select))</span>
+<span id="cb18-7"><a href="#cb18-7"></a></span>
+<span id="cb18-8"><a href="#cb18-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="section-43" class="title-slide slide level1 center">
+<h1></h1>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>penguins_selected <span class="ot">&lt;-</span> penguins_raw <span class="sc">%&gt;%</span> </span>
+<span id="cb19-2"><a href="#cb19-2"></a>  <span class="fu">select_vars</span>(<span class="at">vars_to_select =</span> <span class="fu">c</span>(<span class="st">"individual_id"</span>, <span class="st">"date_egg"</span>, </span>
+<span id="cb19-3"><a href="#cb19-3"></a>           <span class="st">"species"</span>, <span class="st">"flipper_length_mm"</span>, <span class="st">"culmen_length_mm"</span>,</span>
+<span id="cb19-4"><a href="#cb19-4"></a>           <span class="st">"island"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb19-5"><a href="#cb19-5"></a>  <span class="fu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 344 × 6
+   individual_id date_egg   species    flipper_length_mm culmen_length_mm island
+   &lt;chr&gt;         &lt;date&gt;     &lt;chr&gt;                  &lt;dbl&gt;            &lt;dbl&gt; &lt;chr&gt; 
+ 1 N1A1          2007-11-11 Adelie Pe…               181             39.1 Torge…
+ 2 N1A2          2007-11-11 Adelie Pe…               186             39.5 Torge…
+ 3 N2A1          2007-11-16 Adelie Pe…               195             40.3 Torge…
+ 4 N2A2          2007-11-16 Adelie Pe…                NA             NA   Torge…
+ 5 N3A1          2007-11-16 Adelie Pe…               193             36.7 Torge…
+ 6 N3A2          2007-11-16 Adelie Pe…               190             39.3 Torge…
+ 7 N4A1          2007-11-15 Adelie Pe…               181             38.9 Torge…
+ 8 N4A2          2007-11-15 Adelie Pe…               195             39.2 Torge…
+ 9 N5A1          2007-11-09 Adelie Pe…               193             34.1 Torge…
+10 N5A2          2007-11-09 Adelie Pe…               190             42   Torge…
+# ℹ 334 more rows</code></pre>
+</div>
+</div>
+</section>
+
+<section id="section-44" class="title-slide slide level1 center">
+<h1></h1>
+<div class="sourceCode" id="cb21" data-code-line-numbers="9,10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a></span>
+<span id="cb21-2"><a href="#cb21-2"></a>do_it_all <span class="ot">&lt;-</span> <span class="cf">function</span>(.data) {</span>
+<span id="cb21-3"><a href="#cb21-3"></a>  </span>
+<span id="cb21-4"><a href="#cb21-4"></a>  .data <span class="sc">%&gt;%</span> </span>
+<span id="cb21-5"><a href="#cb21-5"></a>    <span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb21-6"><a href="#cb21-6"></a>    <span class="fu">select</span>(individual_id, date_egg, </span>
+<span id="cb21-7"><a href="#cb21-7"></a>           species, flipper_length_mm,</span>
+<span id="cb21-8"><a href="#cb21-8"></a>           island) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-9"><a href="#cb21-9"></a>    <span class="fu">arrange</span>(individual_id, <span class="fu">desc</span>(date_egg)) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-10"><a href="#cb21-10"></a>    <span class="fu">distinct</span>(individual_id, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-11"><a href="#cb21-11"></a>    <span class="fu">group_by</span>(island) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-12"><a href="#cb21-12"></a>    <span class="fu">summarise</span>(</span>
+<span id="cb21-13"><a href="#cb21-13"></a>      <span class="at">mean_flipper_length =</span> <span class="fu">mean</span>(flipper_length_mm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb21-14"><a href="#cb21-14"></a>      <span class="at">sd_flipper_length =</span> <span class="fu">sd</span>(flipper_length_mm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb21-15"><a href="#cb21-15"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-16"><a href="#cb21-16"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_flipper_length), <span class="at">.by_group =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-17"><a href="#cb21-17"></a>    <span class="fu">slice_max</span>(mean_flipper_length) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-18"><a href="#cb21-18"></a>    <span class="fu">pull</span>(island)</span>
+<span id="cb21-19"><a href="#cb21-19"></a>  </span>
+<span id="cb21-20"><a href="#cb21-20"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="section-45" class="title-slide slide level1 center">
+<h1></h1>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a></span>
+<span id="cb22-2"><a href="#cb22-2"></a>get_only_latest <span class="ot">&lt;-</span> <span class="cf">function</span>(.data) {</span>
+<span id="cb22-3"><a href="#cb22-3"></a>  </span>
+<span id="cb22-4"><a href="#cb22-4"></a>  .data <span class="sc">%&gt;%</span> </span>
+<span id="cb22-5"><a href="#cb22-5"></a>    <span class="fu">arrange</span>(individual_id, <span class="fu">desc</span>(date_egg)) <span class="sc">%&gt;%</span> </span>
+<span id="cb22-6"><a href="#cb22-6"></a>    <span class="fu">distinct</span>(individual_id, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb22-7"><a href="#cb22-7"></a></span>
+<span id="cb22-8"><a href="#cb22-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="section-46" class="title-slide slide level1 center">
+<h1></h1>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>penguins_latest <span class="ot">&lt;-</span> penguins_selected <span class="sc">%&gt;%</span> </span>
+<span id="cb23-2"><a href="#cb23-2"></a>  <span class="fu">get_only_latest</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb23-3"><a href="#cb23-3"></a>  <span class="fu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 190 × 6
+   individual_id date_egg   species    flipper_length_mm culmen_length_mm island
+   &lt;chr&gt;         &lt;date&gt;     &lt;chr&gt;                  &lt;dbl&gt;            &lt;dbl&gt; &lt;chr&gt; 
+ 1 N100A1        2009-11-21 Chinstrap…               210             50.8 Dream 
+ 2 N100A2        2009-11-21 Chinstrap…               198             50.2 Dream 
+ 3 N10A1         2007-11-16 Adelie Pe…               184             34.4 Torge…
+ 4 N10A2         2007-11-16 Adelie Pe…               194             46   Torge…
+ 5 N11A1         2008-11-09 Gentoo pe…               210             45.5 Biscoe
+ 6 N11A2         2008-11-09 Gentoo pe…               225             50.5 Biscoe
+ 7 N12A1         2008-11-02 Gentoo pe…               213             44.9 Biscoe
+ 8 N12A2         2008-11-02 Gentoo pe…               215             45.2 Biscoe
+ 9 N13A1         2009-11-20 Gentoo pe…               218             43.4 Biscoe
+10 N13A2         2009-11-20 Gentoo pe…               218             51.3 Biscoe
+# ℹ 180 more rows</code></pre>
+</div>
+</div>
+</section>
+
+<section id="section-47" class="title-slide slide level1 center">
+<h1></h1>
+<div class="sourceCode" id="cb25" data-code-line-numbers="11-16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a></span>
+<span id="cb25-2"><a href="#cb25-2"></a>do_it_all <span class="ot">&lt;-</span> <span class="cf">function</span>(.data) {</span>
+<span id="cb25-3"><a href="#cb25-3"></a>  </span>
+<span id="cb25-4"><a href="#cb25-4"></a>  .data <span class="sc">%&gt;%</span> </span>
+<span id="cb25-5"><a href="#cb25-5"></a>    <span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb25-6"><a href="#cb25-6"></a>    <span class="fu">select</span>(individual_id, date_egg, </span>
+<span id="cb25-7"><a href="#cb25-7"></a>           species, flipper_length_mm,</span>
+<span id="cb25-8"><a href="#cb25-8"></a>           island) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-9"><a href="#cb25-9"></a>    <span class="fu">arrange</span>(individual_id, <span class="fu">desc</span>(date_egg)) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-10"><a href="#cb25-10"></a>    <span class="fu">distinct</span>(individual_id, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-11"><a href="#cb25-11"></a>    <span class="fu">group_by</span>(island) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-12"><a href="#cb25-12"></a>    <span class="fu">summarise</span>(</span>
+<span id="cb25-13"><a href="#cb25-13"></a>      <span class="at">mean_flipper_length =</span> <span class="fu">mean</span>(flipper_length_mm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb25-14"><a href="#cb25-14"></a>      <span class="at">sd_flipper_length =</span> <span class="fu">sd</span>(flipper_length_mm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb25-15"><a href="#cb25-15"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-16"><a href="#cb25-16"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_flipper_length), <span class="at">.by_group =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-17"><a href="#cb25-17"></a>    <span class="fu">slice_max</span>(mean_flipper_length) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-18"><a href="#cb25-18"></a>    <span class="fu">pull</span>(island)</span>
+<span id="cb25-19"><a href="#cb25-19"></a>  </span>
+<span id="cb25-20"><a href="#cb25-20"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="section-48" class="title-slide slide level1 center">
+<h1></h1>
+<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a></span>
+<span id="cb26-2"><a href="#cb26-2"></a>get_grouped_summary <span class="ot">&lt;-</span> <span class="cf">function</span>(.data,</span>
+<span id="cb26-3"><a href="#cb26-3"></a>                                grouping_var,</span>
+<span id="cb26-4"><a href="#cb26-4"></a>                                summary_vars,</span>
+<span id="cb26-5"><a href="#cb26-5"></a>                                arrange_var) {</span>
+<span id="cb26-6"><a href="#cb26-6"></a>  </span>
+<span id="cb26-7"><a href="#cb26-7"></a>  .data <span class="sc">%&gt;%</span> </span>
+<span id="cb26-8"><a href="#cb26-8"></a>    <span class="fu">group_by</span>(.data[[grouping_var]]) <span class="sc">%&gt;%</span> </span>
+<span id="cb26-9"><a href="#cb26-9"></a>    <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">all_of</span>(summary_vars),</span>
+<span id="cb26-10"><a href="#cb26-10"></a>                     <span class="fu">list</span>(</span>
+<span id="cb26-11"><a href="#cb26-11"></a>                       <span class="at">mean =</span> <span class="sc">~</span><span class="fu">mean</span>(., <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb26-12"><a href="#cb26-12"></a>                       <span class="at">sd =</span> <span class="sc">~</span><span class="fu">sd</span>(., <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb26-13"><a href="#cb26-13"></a>                       <span class="at">median =</span> <span class="sc">~</span><span class="fu">median</span>(., <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb26-14"><a href="#cb26-14"></a>                     )</span>
+<span id="cb26-15"><a href="#cb26-15"></a>    )) <span class="sc">%&gt;%</span> </span>
+<span id="cb26-16"><a href="#cb26-16"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>({{ arrange_var }}), <span class="at">.by_group =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb26-17"><a href="#cb26-17"></a></span>
+<span id="cb26-18"><a href="#cb26-18"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="section-49" class="title-slide slide level1 center">
+<h1></h1>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>penguins_summary <span class="ot">&lt;-</span> penguins_latest <span class="sc">%&gt;%</span> </span>
+<span id="cb27-2"><a href="#cb27-2"></a>  <span class="fu">get_grouped_summary</span>(</span>
+<span id="cb27-3"><a href="#cb27-3"></a>    <span class="at">grouping_var =</span> <span class="st">"island"</span>,</span>
+<span id="cb27-4"><a href="#cb27-4"></a>    <span class="at">summary_vars =</span> <span class="fu">c</span>(<span class="st">"flipper_length_mm"</span>,<span class="st">"culmen_length_mm"</span>),</span>
+<span id="cb27-5"><a href="#cb27-5"></a>    <span class="at">arrange_var =</span> <span class="st">"flipper_length_mm_mean"</span></span>
+<span id="cb27-6"><a href="#cb27-6"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb27-7"><a href="#cb27-7"></a>  <span class="fu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 7
+  island    flipper_length_mm_mean flipper_length_mm_sd flipper_length_mm_median
+  &lt;chr&gt;                      &lt;dbl&gt;                &lt;dbl&gt;                    &lt;dbl&gt;
+1 Biscoe                      211.                13.1                       214
+2 Dream                       194.                 7.24                      193
+3 Torgersen                   192.                 6.77                      191
+# ℹ 3 more variables: culmen_length_mm_mean &lt;dbl&gt;, culmen_length_mm_sd &lt;dbl&gt;,
+#   culmen_length_mm_median &lt;dbl&gt;</code></pre>
+</div>
+</div>
+</section>
+
+<section id="section-50" class="title-slide slide level1 center">
+<h1></h1>
+<div class="sourceCode" id="cb29" data-code-line-numbers="17-18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a></span>
+<span id="cb29-2"><a href="#cb29-2"></a>do_it_all <span class="ot">&lt;-</span> <span class="cf">function</span>(.data) {</span>
+<span id="cb29-3"><a href="#cb29-3"></a>  </span>
+<span id="cb29-4"><a href="#cb29-4"></a>  .data <span class="sc">%&gt;%</span> </span>
+<span id="cb29-5"><a href="#cb29-5"></a>    <span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb29-6"><a href="#cb29-6"></a>    <span class="fu">select</span>(individual_id, date_egg, </span>
+<span id="cb29-7"><a href="#cb29-7"></a>           species, flipper_length_mm,</span>
+<span id="cb29-8"><a href="#cb29-8"></a>           island) <span class="sc">%&gt;%</span> </span>
+<span id="cb29-9"><a href="#cb29-9"></a>    <span class="fu">arrange</span>(individual_id, <span class="fu">desc</span>(date_egg)) <span class="sc">%&gt;%</span> </span>
+<span id="cb29-10"><a href="#cb29-10"></a>    <span class="fu">distinct</span>(individual_id, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb29-11"><a href="#cb29-11"></a>    <span class="fu">group_by</span>(island) <span class="sc">%&gt;%</span> </span>
+<span id="cb29-12"><a href="#cb29-12"></a>    <span class="fu">summarise</span>(</span>
+<span id="cb29-13"><a href="#cb29-13"></a>      <span class="at">mean_flipper_length =</span> <span class="fu">mean</span>(flipper_length_mm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb29-14"><a href="#cb29-14"></a>      <span class="at">sd_flipper_length =</span> <span class="fu">sd</span>(flipper_length_mm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb29-15"><a href="#cb29-15"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb29-16"><a href="#cb29-16"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_flipper_length), <span class="at">.by_group =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb29-17"><a href="#cb29-17"></a>    <span class="fu">slice_max</span>(mean_flipper_length) <span class="sc">%&gt;%</span> </span>
+<span id="cb29-18"><a href="#cb29-18"></a>    <span class="fu">pull</span>(island)</span>
+<span id="cb29-19"><a href="#cb29-19"></a>  </span>
+<span id="cb29-20"><a href="#cb29-20"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="section-51" class="title-slide slide level1 center">
+<h1></h1>
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a></span>
+<span id="cb30-2"><a href="#cb30-2"></a>identify_max_group <span class="ot">&lt;-</span> <span class="cf">function</span>(.data,</span>
+<span id="cb30-3"><a href="#cb30-3"></a>                               max_var,</span>
+<span id="cb30-4"><a href="#cb30-4"></a>                               group_var) {</span>
+<span id="cb30-5"><a href="#cb30-5"></a>  .data <span class="sc">%&gt;%</span></span>
+<span id="cb30-6"><a href="#cb30-6"></a>    <span class="fu">slice_max</span>(<span class="at">order_by =</span> .data[[max_var]], <span class="at">n =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb30-7"><a href="#cb30-7"></a>    <span class="fu">pull</span>({{ group_var }})</span>
+<span id="cb30-8"><a href="#cb30-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="section-52" class="title-slide slide level1 center">
+<h1></h1>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>penguins_summary <span class="sc">%&gt;%</span> </span>
+<span id="cb31-2"><a href="#cb31-2"></a>  <span class="fu">identify_max_group</span>(</span>
+<span id="cb31-3"><a href="#cb31-3"></a>    <span class="at">max_var =</span> <span class="st">"flipper_length_mm_mean"</span>,</span>
+<span id="cb31-4"><a href="#cb31-4"></a>    <span class="at">group_var =</span> <span class="st">"island"</span></span>
+<span id="cb31-5"><a href="#cb31-5"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Biscoe"</code></pre>
+</div>
+</div>
+</section>
+
+<section id="put-it-all-together" class="title-slide slide level1 center">
+<h1>Put It All Together</h1>
+
+</section>
+
+<section id="section-53" class="title-slide slide level1 center">
+<h1></h1>
+<div class="sourceCode" id="cb33" data-code-line-numbers="1-20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a></span>
+<span id="cb33-2"><a href="#cb33-2"></a>do_it_all <span class="ot">&lt;-</span> <span class="cf">function</span>(.data) {</span>
+<span id="cb33-3"><a href="#cb33-3"></a>  </span>
+<span id="cb33-4"><a href="#cb33-4"></a>  .data <span class="sc">%&gt;%</span> </span>
+<span id="cb33-5"><a href="#cb33-5"></a>    <span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb33-6"><a href="#cb33-6"></a>    <span class="fu">select</span>(individual_id, date_egg, </span>
+<span id="cb33-7"><a href="#cb33-7"></a>           species, flipper_length_mm,</span>
+<span id="cb33-8"><a href="#cb33-8"></a>           island) <span class="sc">%&gt;%</span> </span>
+<span id="cb33-9"><a href="#cb33-9"></a>    <span class="fu">arrange</span>(individual_id, <span class="fu">desc</span>(date_egg)) <span class="sc">%&gt;%</span> </span>
+<span id="cb33-10"><a href="#cb33-10"></a>    <span class="fu">distinct</span>(individual_id, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb33-11"><a href="#cb33-11"></a>    <span class="fu">group_by</span>(island) <span class="sc">%&gt;%</span> </span>
+<span id="cb33-12"><a href="#cb33-12"></a>    <span class="fu">summarise</span>(</span>
+<span id="cb33-13"><a href="#cb33-13"></a>      <span class="at">mean_flipper_length =</span> <span class="fu">mean</span>(flipper_length_mm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb33-14"><a href="#cb33-14"></a>      <span class="at">sd_flipper_length =</span> <span class="fu">sd</span>(flipper_length_mm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb33-15"><a href="#cb33-15"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb33-16"><a href="#cb33-16"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_flipper_length), <span class="at">.by_group =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb33-17"><a href="#cb33-17"></a>    <span class="fu">slice_max</span>(mean_flipper_length) <span class="sc">%&gt;%</span> </span>
+<span id="cb33-18"><a href="#cb33-18"></a>    <span class="fu">pull</span>(island)</span>
+<span id="cb33-19"><a href="#cb33-19"></a>  </span>
+<span id="cb33-20"><a href="#cb33-20"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="section-54" class="title-slide slide level1 center">
+<h1></h1>
+<div class="sourceCode" id="cb34" data-code-line-numbers="1-28|9-10|12-13|15-20|22-26|28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a></span>
+<span id="cb34-2"><a href="#cb34-2"></a>do_it_all <span class="ot">&lt;-</span> <span class="cf">function</span>(.data,</span>
+<span id="cb34-3"><a href="#cb34-3"></a>                       vars_to_select_func,</span>
+<span id="cb34-4"><a href="#cb34-4"></a>                       grouping_var_func,</span>
+<span id="cb34-5"><a href="#cb34-5"></a>                       summary_vars_func,</span>
+<span id="cb34-6"><a href="#cb34-6"></a>                       arrange_var_func,</span>
+<span id="cb34-7"><a href="#cb34-7"></a>                       max_var_func) {</span>
+<span id="cb34-8"><a href="#cb34-8"></a>  </span>
+<span id="cb34-9"><a href="#cb34-9"></a>  selected_df <span class="ot">&lt;-</span> .data <span class="sc">%&gt;%</span> </span>
+<span id="cb34-10"><a href="#cb34-10"></a>    <span class="fu">select_vars</span>(<span class="at">vars_to_select =</span> vars_to_select_func)</span>
+<span id="cb34-11"><a href="#cb34-11"></a>  </span>
+<span id="cb34-12"><a href="#cb34-12"></a>  latest_df <span class="ot">&lt;-</span> selected_df <span class="sc">%&gt;%</span> </span>
+<span id="cb34-13"><a href="#cb34-13"></a>    <span class="fu">get_only_latest</span>()</span>
+<span id="cb34-14"><a href="#cb34-14"></a>  </span>
+<span id="cb34-15"><a href="#cb34-15"></a>  group_summary_df <span class="ot">&lt;-</span> latest_df <span class="sc">%&gt;%</span></span>
+<span id="cb34-16"><a href="#cb34-16"></a>    <span class="fu">get_grouped_summary</span>(</span>
+<span id="cb34-17"><a href="#cb34-17"></a>      <span class="at">grouping_var =</span> grouping_var_func,</span>
+<span id="cb34-18"><a href="#cb34-18"></a>      <span class="at">summary_vars =</span> summary_vars_func,</span>
+<span id="cb34-19"><a href="#cb34-19"></a>      <span class="at">arrange_var =</span> arrange_var_func</span>
+<span id="cb34-20"><a href="#cb34-20"></a>    )</span>
+<span id="cb34-21"><a href="#cb34-21"></a></span>
+<span id="cb34-22"><a href="#cb34-22"></a>  max_group <span class="ot">&lt;-</span> group_summary_df <span class="sc">%&gt;%</span></span>
+<span id="cb34-23"><a href="#cb34-23"></a>    <span class="fu">identify_max_group</span>(</span>
+<span id="cb34-24"><a href="#cb34-24"></a>      <span class="at">max_var =</span> max_var_func,</span>
+<span id="cb34-25"><a href="#cb34-25"></a>      <span class="at">group_var =</span> grouping_var_func</span>
+<span id="cb34-26"><a href="#cb34-26"></a>    )</span>
+<span id="cb34-27"><a href="#cb34-27"></a>  </span>
+<span id="cb34-28"><a href="#cb34-28"></a>  <span class="fu">return</span>(max_group)</span>
+<span id="cb34-29"><a href="#cb34-29"></a>  </span>
+<span id="cb34-30"><a href="#cb34-30"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="section-55" class="title-slide slide level1 center">
+<h1></h1>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>penguins_raw <span class="sc">%&gt;%</span> </span>
+<span id="cb35-2"><a href="#cb35-2"></a>  <span class="fu">do_it_all</span>(</span>
+<span id="cb35-3"><a href="#cb35-3"></a>    <span class="at">vars_to_select_func =</span> <span class="fu">c</span>(<span class="st">"individual_id"</span>, <span class="st">"date_egg"</span>, </span>
+<span id="cb35-4"><a href="#cb35-4"></a>           <span class="st">"species"</span>, <span class="st">"flipper_length_mm"</span>, <span class="st">"culmen_length_mm"</span>, <span class="st">"island"</span>),</span>
+<span id="cb35-5"><a href="#cb35-5"></a>    <span class="at">grouping_var_func =</span> <span class="st">"island"</span>,</span>
+<span id="cb35-6"><a href="#cb35-6"></a>    <span class="at">summary_vars_func =</span> <span class="fu">c</span>(<span class="st">"flipper_length_mm"</span>,<span class="st">"culmen_length_mm"</span>),</span>
+<span id="cb35-7"><a href="#cb35-7"></a>    <span class="at">arrange_var_func =</span> <span class="st">"flipper_length_mm_mean"</span>,</span>
+<span id="cb35-8"><a href="#cb35-8"></a>    <span class="at">max_var_func =</span> <span class="st">"flipper_length_mm_mean"</span></span>
+<span id="cb35-9"><a href="#cb35-9"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Biscoe"</code></pre>
+</div>
+</div>
+</section>
+
+<section id="i-had-to-debug" class="title-slide slide level1 center">
+<h1>I Had to Debug</h1>
+
+</section>
+
+<section id="section-56" class="title-slide slide level1 center">
+<h1></h1>
+<div class="sourceCode" id="cb37" data-code-line-numbers="1-28|15-26|12-13|28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a></span>
+<span id="cb37-2"><a href="#cb37-2"></a>do_it_all <span class="ot">&lt;-</span> <span class="cf">function</span>(.data,</span>
+<span id="cb37-3"><a href="#cb37-3"></a>                       vars_to_select_func,</span>
+<span id="cb37-4"><a href="#cb37-4"></a>                       grouping_var_func,</span>
+<span id="cb37-5"><a href="#cb37-5"></a>                       summary_vars_func,</span>
+<span id="cb37-6"><a href="#cb37-6"></a>                       arrange_var_func,</span>
+<span id="cb37-7"><a href="#cb37-7"></a>                       max_var_func) {</span>
+<span id="cb37-8"><a href="#cb37-8"></a>  </span>
+<span id="cb37-9"><a href="#cb37-9"></a>  selected_df <span class="ot">&lt;-</span> .data <span class="sc">%&gt;%</span> </span>
+<span id="cb37-10"><a href="#cb37-10"></a>    <span class="fu">select_vars</span>(<span class="at">vars_to_select =</span> vars_to_select_func)</span>
+<span id="cb37-11"><a href="#cb37-11"></a>  </span>
+<span id="cb37-12"><a href="#cb37-12"></a>  latest_df <span class="ot">&lt;-</span> selected_df <span class="sc">%&gt;%</span> </span>
+<span id="cb37-13"><a href="#cb37-13"></a>    <span class="fu">get_only_latest</span>()</span>
+<span id="cb37-14"><a href="#cb37-14"></a>  </span>
+<span id="cb37-15"><a href="#cb37-15"></a>  <span class="co"># group_summary_df &lt;- latest_df %&gt;%</span></span>
+<span id="cb37-16"><a href="#cb37-16"></a>  <span class="co">#   get_grouped_summary(</span></span>
+<span id="cb37-17"><a href="#cb37-17"></a>  <span class="co">#     grouping_var = grouping_var_func,</span></span>
+<span id="cb37-18"><a href="#cb37-18"></a>  <span class="co">#     summary_vars = summary_vars_func,</span></span>
+<span id="cb37-19"><a href="#cb37-19"></a>  <span class="co">#     arrange_var = arrange_var_func</span></span>
+<span id="cb37-20"><a href="#cb37-20"></a>  <span class="co">#   )</span></span>
+<span id="cb37-21"><a href="#cb37-21"></a>  <span class="co"># </span></span>
+<span id="cb37-22"><a href="#cb37-22"></a>  <span class="co"># max_group &lt;- group_summary_df %&gt;%</span></span>
+<span id="cb37-23"><a href="#cb37-23"></a>  <span class="co">#   identify_max_group(</span></span>
+<span id="cb37-24"><a href="#cb37-24"></a>  <span class="co">#     max_var = max_var_func,</span></span>
+<span id="cb37-25"><a href="#cb37-25"></a>  <span class="co">#     group_var = grouping_var_func</span></span>
+<span id="cb37-26"><a href="#cb37-26"></a>  <span class="co">#   )</span></span>
+<span id="cb37-27"><a href="#cb37-27"></a>  </span>
+<span id="cb37-28"><a href="#cb37-28"></a>  <span class="fu">return</span>(latest_df)</span>
+<span id="cb37-29"><a href="#cb37-29"></a>  </span>
+<span id="cb37-30"><a href="#cb37-30"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="modular-functions" class="title-slide slide level1 center">
+<h1>Modular Functions</h1>
+
+</section>
+
+<section id="subjective" class="title-slide slide level1 center">
+<h1>Subjective</h1>
+
+</section>
+
+<section id="can-over-engineer" class="title-slide slide level1 center">
+<h1>Can Over-Engineer</h1>
+
+</section>
+
+<section id="assume-failure-1" class="title-slide slide level1 center">
+<h1>Assume Failure</h1>
+
+</section>
+
+<section id="ideal-data" class="title-slide slide level1 center">
+<h1>Ideal Data</h1>
+
+</section>
+
+<section id="section-57" class="title-slide slide level1 center">
+<h1></h1>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+  individual_id date_egg   species                                  
+  &lt;chr&gt;         &lt;date&gt;     &lt;chr&gt;                                    
+1 N100A1        2009-11-21 Chinstrap penguin (Pygoscelis antarctica)
+2 N100A2        2009-11-21 Chinstrap penguin (Pygoscelis antarctica)
+3 N10A1         2007-11-16 Adelie Penguin (Pygoscelis adeliae)      
+4 N10A2         2007-11-16 Adelie Penguin (Pygoscelis adeliae)      
+5 N11A1         2008-11-09 Gentoo penguin (Pygoscelis papua)        
+6 N11A2         2008-11-09 Gentoo penguin (Pygoscelis papua)        </code></pre>
+</div>
+</div>
+</section>
+
+<section id="how-sure-am-i" class="title-slide slide level1 center">
+<h1>How Sure Am I?</h1>
+
+</section>
+
+<section id="need-tests" class="title-slide slide level1 center">
+<h1>Need Tests</h1>
+
+</section>
+
+<section id="you-already-do" class="title-slide slide level1 center">
+<h1>You Already Do</h1>
+
+</section>
+
+<section id="error-vs.-not" class="title-slide slide level1 center">
+<h1>Error vs.&nbsp;Not</h1>
+
+</section>
+
+<section id="ad-hoc" class="title-slide slide level1 center">
+<h1>Ad Hoc</h1>
+
+</section>
+
+<section id="section-58" class="title-slide slide level1 center">
+<h1></h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>penguins_latest <span class="sc">%&gt;%</span> </span>
+<span id="cb39-2"><a href="#cb39-2"></a>  <span class="fu">count</span>(individual_id) <span class="sc">%&gt;%</span> </span>
+<span id="cb39-3"><a href="#cb39-3"></a>  <span class="fu">filter</span>(n <span class="sc">&gt;</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 0 × 2
+# ℹ 2 variables: individual_id &lt;chr&gt;, n &lt;int&gt;</code></pre>
+</div>
+</div>
+</section>
+
+<section id="automatic" class="title-slide slide level1 center">
+<h1>Automatic</h1>
+
+</section>
+
+<section id="more-later" class="title-slide slide level1 center">
+<h1>More Later</h1>
+
+</section>
+
+<section id="never-100" class="title-slide slide level1 center">
+<h1>Never 100%</h1>
+
+</section>
+
+<section id="last-principle" class="title-slide slide level1 center">
+<h1>Last Principle</h1>
+
+</section>
+
+<section id="automate-1" class="title-slide slide level1 center">
+<h1>Automate</h1>
+
+</section>
+
+<section id="more-conceptual" class="title-slide slide level1 center">
+<h1>More Conceptual</h1>
+
+</section>
+
+<section id="use-the-terminal" class="title-slide slide level1 center">
+<h1>Use the Terminal</h1>
+
+</section>
+
+<section id="section-59" class="title-slide slide level1 center">
+<h1></h1>
+<div class="sourceCode" id="cb41" data-code-line-numbers="2|4-34|36-78|80-94"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a></span>
+<span id="cb41-2"><a href="#cb41-2"></a><span class="co"># get_max_group.R</span></span>
+<span id="cb41-3"><a href="#cb41-3"></a></span>
+<span id="cb41-4"><a href="#cb41-4"></a><span class="co"># Main Function</span></span>
+<span id="cb41-5"><a href="#cb41-5"></a></span>
+<span id="cb41-6"><a href="#cb41-6"></a>do_it_all <span class="ot">&lt;-</span> <span class="cf">function</span>(.data,</span>
+<span id="cb41-7"><a href="#cb41-7"></a>                       vars_to_select_func,</span>
+<span id="cb41-8"><a href="#cb41-8"></a>                       grouping_var_func,</span>
+<span id="cb41-9"><a href="#cb41-9"></a>                       summary_vars_func,</span>
+<span id="cb41-10"><a href="#cb41-10"></a>                       arrange_var_func,</span>
+<span id="cb41-11"><a href="#cb41-11"></a>                       max_var_func) {</span>
+<span id="cb41-12"><a href="#cb41-12"></a>  </span>
+<span id="cb41-13"><a href="#cb41-13"></a>  selected_df <span class="ot">&lt;-</span> .data <span class="sc">%&gt;%</span> </span>
+<span id="cb41-14"><a href="#cb41-14"></a>    <span class="fu">select_vars</span>(<span class="at">vars_to_select =</span> vars_to_select_func)</span>
+<span id="cb41-15"><a href="#cb41-15"></a>  </span>
+<span id="cb41-16"><a href="#cb41-16"></a>  latest_df <span class="ot">&lt;-</span> selected_df <span class="sc">%&gt;%</span> </span>
+<span id="cb41-17"><a href="#cb41-17"></a>    <span class="fu">get_only_latest</span>()</span>
+<span id="cb41-18"><a href="#cb41-18"></a>  </span>
+<span id="cb41-19"><a href="#cb41-19"></a>  group_summary_df <span class="ot">&lt;-</span> latest_df <span class="sc">%&gt;%</span></span>
+<span id="cb41-20"><a href="#cb41-20"></a>    <span class="fu">get_grouped_summary</span>(</span>
+<span id="cb41-21"><a href="#cb41-21"></a>      <span class="at">grouping_var =</span> grouping_var_func,</span>
+<span id="cb41-22"><a href="#cb41-22"></a>      <span class="at">summary_vars =</span> summary_vars_func,</span>
+<span id="cb41-23"><a href="#cb41-23"></a>      <span class="at">arrange_var =</span> arrange_var_func</span>
+<span id="cb41-24"><a href="#cb41-24"></a>    )</span>
+<span id="cb41-25"><a href="#cb41-25"></a></span>
+<span id="cb41-26"><a href="#cb41-26"></a>  max_group <span class="ot">&lt;-</span> group_summary_df <span class="sc">%&gt;%</span></span>
+<span id="cb41-27"><a href="#cb41-27"></a>    <span class="fu">identify_max_group</span>(</span>
+<span id="cb41-28"><a href="#cb41-28"></a>      <span class="at">max_var =</span> max_var_func,</span>
+<span id="cb41-29"><a href="#cb41-29"></a>      <span class="at">group_var =</span> grouping_var_func</span>
+<span id="cb41-30"><a href="#cb41-30"></a>    )</span>
+<span id="cb41-31"><a href="#cb41-31"></a>  </span>
+<span id="cb41-32"><a href="#cb41-32"></a>  <span class="fu">return</span>(max_group)</span>
+<span id="cb41-33"><a href="#cb41-33"></a>  </span>
+<span id="cb41-34"><a href="#cb41-34"></a>}</span>
+<span id="cb41-35"><a href="#cb41-35"></a></span>
+<span id="cb41-36"><a href="#cb41-36"></a><span class="co"># Helper Functions</span></span>
+<span id="cb41-37"><a href="#cb41-37"></a></span>
+<span id="cb41-38"><a href="#cb41-38"></a>select_vars <span class="ot">&lt;-</span> <span class="cf">function</span>(.data, vars_to_select) {</span>
+<span id="cb41-39"><a href="#cb41-39"></a>  </span>
+<span id="cb41-40"><a href="#cb41-40"></a>  .data <span class="sc">%&gt;%</span> </span>
+<span id="cb41-41"><a href="#cb41-41"></a>    <span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb41-42"><a href="#cb41-42"></a>    <span class="fu">select</span>(<span class="fu">any_of</span>(vars_to_select))</span>
+<span id="cb41-43"><a href="#cb41-43"></a></span>
+<span id="cb41-44"><a href="#cb41-44"></a>}</span>
+<span id="cb41-45"><a href="#cb41-45"></a></span>
+<span id="cb41-46"><a href="#cb41-46"></a>get_only_latest <span class="ot">&lt;-</span> <span class="cf">function</span>(.data) {</span>
+<span id="cb41-47"><a href="#cb41-47"></a>  </span>
+<span id="cb41-48"><a href="#cb41-48"></a>  .data <span class="sc">%&gt;%</span> </span>
+<span id="cb41-49"><a href="#cb41-49"></a>    <span class="fu">arrange</span>(individual_id, <span class="fu">desc</span>(date_egg)) <span class="sc">%&gt;%</span> </span>
+<span id="cb41-50"><a href="#cb41-50"></a>    <span class="fu">distinct</span>(individual_id, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb41-51"><a href="#cb41-51"></a></span>
+<span id="cb41-52"><a href="#cb41-52"></a>}</span>
+<span id="cb41-53"><a href="#cb41-53"></a></span>
+<span id="cb41-54"><a href="#cb41-54"></a>get_grouped_summary <span class="ot">&lt;-</span> <span class="cf">function</span>(.data,</span>
+<span id="cb41-55"><a href="#cb41-55"></a>                                grouping_var,</span>
+<span id="cb41-56"><a href="#cb41-56"></a>                                summary_vars,</span>
+<span id="cb41-57"><a href="#cb41-57"></a>                                arrange_var) {</span>
+<span id="cb41-58"><a href="#cb41-58"></a>  </span>
+<span id="cb41-59"><a href="#cb41-59"></a>  .data <span class="sc">%&gt;%</span> </span>
+<span id="cb41-60"><a href="#cb41-60"></a>    <span class="fu">group_by</span>(.data[[grouping_var]]) <span class="sc">%&gt;%</span> </span>
+<span id="cb41-61"><a href="#cb41-61"></a>    <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">all_of</span>(summary_vars),</span>
+<span id="cb41-62"><a href="#cb41-62"></a>                     <span class="fu">list</span>(</span>
+<span id="cb41-63"><a href="#cb41-63"></a>                       <span class="at">mean =</span> <span class="sc">~</span><span class="fu">mean</span>(., <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb41-64"><a href="#cb41-64"></a>                       <span class="at">sd =</span> <span class="sc">~</span><span class="fu">sd</span>(., <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb41-65"><a href="#cb41-65"></a>                       <span class="at">median =</span> <span class="sc">~</span><span class="fu">median</span>(., <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb41-66"><a href="#cb41-66"></a>                     )</span>
+<span id="cb41-67"><a href="#cb41-67"></a>    )) <span class="sc">%&gt;%</span> </span>
+<span id="cb41-68"><a href="#cb41-68"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>({{ arrange_var }}), <span class="at">.by_group =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb41-69"><a href="#cb41-69"></a></span>
+<span id="cb41-70"><a href="#cb41-70"></a>}</span>
+<span id="cb41-71"><a href="#cb41-71"></a></span>
+<span id="cb41-72"><a href="#cb41-72"></a>identify_max_group <span class="ot">&lt;-</span> <span class="cf">function</span>(.data,</span>
+<span id="cb41-73"><a href="#cb41-73"></a>                               max_var,</span>
+<span id="cb41-74"><a href="#cb41-74"></a>                               group_var) {</span>
+<span id="cb41-75"><a href="#cb41-75"></a>  .data <span class="sc">%&gt;%</span></span>
+<span id="cb41-76"><a href="#cb41-76"></a>    <span class="fu">slice_max</span>(<span class="at">order_by =</span> .data[[max_var]], <span class="at">n =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb41-77"><a href="#cb41-77"></a>    <span class="fu">pull</span>({{ group_var }})</span>
+<span id="cb41-78"><a href="#cb41-78"></a>}</span>
+<span id="cb41-79"><a href="#cb41-79"></a></span>
+<span id="cb41-80"><a href="#cb41-80"></a><span class="co"># Run Main Function</span></span>
+<span id="cb41-81"><a href="#cb41-81"></a></span>
+<span id="cb41-82"><a href="#cb41-82"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb41-83"><a href="#cb41-83"></a></span>
+<span id="cb41-84"><a href="#cb41-84"></a>output <span class="ot">&lt;-</span> penguins_raw <span class="sc">%&gt;%</span> </span>
+<span id="cb41-85"><a href="#cb41-85"></a>  <span class="fu">do_it_all</span>(</span>
+<span id="cb41-86"><a href="#cb41-86"></a>    <span class="at">vars_to_select_func =</span> <span class="fu">c</span>(<span class="st">"individual_id"</span>, <span class="st">"date_egg"</span>, </span>
+<span id="cb41-87"><a href="#cb41-87"></a>           <span class="st">"species"</span>, <span class="st">"flipper_length_mm"</span>, <span class="st">"culmen_length_mm"</span>, <span class="st">"island"</span>),</span>
+<span id="cb41-88"><a href="#cb41-88"></a>    <span class="at">grouping_var_func =</span> <span class="st">"island"</span>,</span>
+<span id="cb41-89"><a href="#cb41-89"></a>    <span class="at">summary_vars_func =</span> <span class="fu">c</span>(<span class="st">"flipper_length_mm"</span>,<span class="st">"culmen_length_mm"</span>),</span>
+<span id="cb41-90"><a href="#cb41-90"></a>    <span class="at">arrange_var_func =</span> <span class="st">"flipper_length_mm_mean"</span>,</span>
+<span id="cb41-91"><a href="#cb41-91"></a>    <span class="at">max_var_func =</span> <span class="st">"flipper_length_mm_mean"</span></span>
+<span id="cb41-92"><a href="#cb41-92"></a>  )</span>
+<span id="cb41-93"><a href="#cb41-93"></a></span>
+<span id="cb41-94"><a href="#cb41-94"></a><span class="fu">print</span>(output)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="section-60" class="title-slide slide level1 center">
+<h1></h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1"></a><span class="co"># Rscript get_max_group.R</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+
+<section id="can-do-even-better" class="title-slide slide level1 center">
+<h1>Can Do Even Better</h1>
+
+</section>
+
+<section id="section-61" class="title-slide slide level1 center">
+<h1></h1>
+<div class="sourceCode" id="cb43" data-code-line-numbers="2|4-6|92"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a></span>
+<span id="cb43-2"><a href="#cb43-2"></a><span class="co"># get_max_group.R</span></span>
+<span id="cb43-3"><a href="#cb43-3"></a></span>
+<span id="cb43-4"><a href="#cb43-4"></a><span class="co"># Take in command line arguments</span></span>
+<span id="cb43-5"><a href="#cb43-5"></a></span>
+<span id="cb43-6"><a href="#cb43-6"></a>args <span class="ot">&lt;-</span> <span class="fu">commandArgs</span>(<span class="at">trailingOnly =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb43-7"><a href="#cb43-7"></a></span>
+<span id="cb43-8"><a href="#cb43-8"></a><span class="co"># Main Function</span></span>
+<span id="cb43-9"><a href="#cb43-9"></a></span>
+<span id="cb43-10"><a href="#cb43-10"></a>do_it_all <span class="ot">&lt;-</span> <span class="cf">function</span>(.data,</span>
+<span id="cb43-11"><a href="#cb43-11"></a>                       vars_to_select_func,</span>
+<span id="cb43-12"><a href="#cb43-12"></a>                       grouping_var_func,</span>
+<span id="cb43-13"><a href="#cb43-13"></a>                       summary_vars_func,</span>
+<span id="cb43-14"><a href="#cb43-14"></a>                       arrange_var_func,</span>
+<span id="cb43-15"><a href="#cb43-15"></a>                       max_var_func) {</span>
+<span id="cb43-16"><a href="#cb43-16"></a>  </span>
+<span id="cb43-17"><a href="#cb43-17"></a>  selected_df <span class="ot">&lt;-</span> .data <span class="sc">%&gt;%</span> </span>
+<span id="cb43-18"><a href="#cb43-18"></a>    <span class="fu">select_vars</span>(<span class="at">vars_to_select =</span> vars_to_select_func)</span>
+<span id="cb43-19"><a href="#cb43-19"></a>  </span>
+<span id="cb43-20"><a href="#cb43-20"></a>  latest_df <span class="ot">&lt;-</span> selected_df <span class="sc">%&gt;%</span> </span>
+<span id="cb43-21"><a href="#cb43-21"></a>    <span class="fu">get_only_latest</span>()</span>
+<span id="cb43-22"><a href="#cb43-22"></a>  </span>
+<span id="cb43-23"><a href="#cb43-23"></a>  group_summary_df <span class="ot">&lt;-</span> latest_df <span class="sc">%&gt;%</span></span>
+<span id="cb43-24"><a href="#cb43-24"></a>    <span class="fu">get_grouped_summary</span>(</span>
+<span id="cb43-25"><a href="#cb43-25"></a>      <span class="at">grouping_var =</span> grouping_var_func,</span>
+<span id="cb43-26"><a href="#cb43-26"></a>      <span class="at">summary_vars =</span> summary_vars_func,</span>
+<span id="cb43-27"><a href="#cb43-27"></a>      <span class="at">arrange_var =</span> arrange_var_func</span>
+<span id="cb43-28"><a href="#cb43-28"></a>    )</span>
+<span id="cb43-29"><a href="#cb43-29"></a></span>
+<span id="cb43-30"><a href="#cb43-30"></a>  max_group <span class="ot">&lt;-</span> group_summary_df <span class="sc">%&gt;%</span></span>
+<span id="cb43-31"><a href="#cb43-31"></a>    <span class="fu">identify_max_group</span>(</span>
+<span id="cb43-32"><a href="#cb43-32"></a>      <span class="at">max_var =</span> max_var_func,</span>
+<span id="cb43-33"><a href="#cb43-33"></a>      <span class="at">group_var =</span> grouping_var_func</span>
+<span id="cb43-34"><a href="#cb43-34"></a>    )</span>
+<span id="cb43-35"><a href="#cb43-35"></a>  </span>
+<span id="cb43-36"><a href="#cb43-36"></a>  <span class="fu">return</span>(max_group)</span>
+<span id="cb43-37"><a href="#cb43-37"></a>  </span>
+<span id="cb43-38"><a href="#cb43-38"></a>}</span>
+<span id="cb43-39"><a href="#cb43-39"></a></span>
+<span id="cb43-40"><a href="#cb43-40"></a><span class="co"># Helper Functions</span></span>
+<span id="cb43-41"><a href="#cb43-41"></a></span>
+<span id="cb43-42"><a href="#cb43-42"></a>select_vars <span class="ot">&lt;-</span> <span class="cf">function</span>(.data, vars_to_select) {</span>
+<span id="cb43-43"><a href="#cb43-43"></a>  </span>
+<span id="cb43-44"><a href="#cb43-44"></a>  .data <span class="sc">%&gt;%</span> </span>
+<span id="cb43-45"><a href="#cb43-45"></a>    <span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb43-46"><a href="#cb43-46"></a>    <span class="fu">select</span>(<span class="fu">any_of</span>(vars_to_select))</span>
+<span id="cb43-47"><a href="#cb43-47"></a></span>
+<span id="cb43-48"><a href="#cb43-48"></a>}</span>
+<span id="cb43-49"><a href="#cb43-49"></a></span>
+<span id="cb43-50"><a href="#cb43-50"></a>get_only_latest <span class="ot">&lt;-</span> <span class="cf">function</span>(.data) {</span>
+<span id="cb43-51"><a href="#cb43-51"></a>  </span>
+<span id="cb43-52"><a href="#cb43-52"></a>  .data <span class="sc">%&gt;%</span> </span>
+<span id="cb43-53"><a href="#cb43-53"></a>    <span class="fu">arrange</span>(individual_id, <span class="fu">desc</span>(date_egg)) <span class="sc">%&gt;%</span> </span>
+<span id="cb43-54"><a href="#cb43-54"></a>    <span class="fu">distinct</span>(individual_id, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb43-55"><a href="#cb43-55"></a></span>
+<span id="cb43-56"><a href="#cb43-56"></a>}</span>
+<span id="cb43-57"><a href="#cb43-57"></a></span>
+<span id="cb43-58"><a href="#cb43-58"></a>get_grouped_summary <span class="ot">&lt;-</span> <span class="cf">function</span>(.data,</span>
+<span id="cb43-59"><a href="#cb43-59"></a>                                grouping_var,</span>
+<span id="cb43-60"><a href="#cb43-60"></a>                                summary_vars,</span>
+<span id="cb43-61"><a href="#cb43-61"></a>                                arrange_var) {</span>
+<span id="cb43-62"><a href="#cb43-62"></a>  </span>
+<span id="cb43-63"><a href="#cb43-63"></a>  .data <span class="sc">%&gt;%</span> </span>
+<span id="cb43-64"><a href="#cb43-64"></a>    <span class="fu">group_by</span>(.data[[grouping_var]]) <span class="sc">%&gt;%</span> </span>
+<span id="cb43-65"><a href="#cb43-65"></a>    <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">all_of</span>(summary_vars),</span>
+<span id="cb43-66"><a href="#cb43-66"></a>                     <span class="fu">list</span>(</span>
+<span id="cb43-67"><a href="#cb43-67"></a>                       <span class="at">mean =</span> <span class="sc">~</span><span class="fu">mean</span>(., <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb43-68"><a href="#cb43-68"></a>                       <span class="at">sd =</span> <span class="sc">~</span><span class="fu">sd</span>(., <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb43-69"><a href="#cb43-69"></a>                       <span class="at">median =</span> <span class="sc">~</span><span class="fu">median</span>(., <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb43-70"><a href="#cb43-70"></a>                     )</span>
+<span id="cb43-71"><a href="#cb43-71"></a>    )) <span class="sc">%&gt;%</span> </span>
+<span id="cb43-72"><a href="#cb43-72"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>({{ arrange_var }}), <span class="at">.by_group =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb43-73"><a href="#cb43-73"></a></span>
+<span id="cb43-74"><a href="#cb43-74"></a>}</span>
+<span id="cb43-75"><a href="#cb43-75"></a></span>
+<span id="cb43-76"><a href="#cb43-76"></a>identify_max_group <span class="ot">&lt;-</span> <span class="cf">function</span>(.data,</span>
+<span id="cb43-77"><a href="#cb43-77"></a>                               max_var,</span>
+<span id="cb43-78"><a href="#cb43-78"></a>                               group_var) {</span>
+<span id="cb43-79"><a href="#cb43-79"></a>  .data <span class="sc">%&gt;%</span></span>
+<span id="cb43-80"><a href="#cb43-80"></a>    <span class="fu">slice_max</span>(<span class="at">order_by =</span> .data[[max_var]], <span class="at">n =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb43-81"><a href="#cb43-81"></a>    <span class="fu">pull</span>({{ group_var }})</span>
+<span id="cb43-82"><a href="#cb43-82"></a>}</span>
+<span id="cb43-83"><a href="#cb43-83"></a></span>
+<span id="cb43-84"><a href="#cb43-84"></a><span class="co"># Run Main Function</span></span>
+<span id="cb43-85"><a href="#cb43-85"></a></span>
+<span id="cb43-86"><a href="#cb43-86"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb43-87"><a href="#cb43-87"></a></span>
+<span id="cb43-88"><a href="#cb43-88"></a>output <span class="ot">&lt;-</span> penguins_raw <span class="sc">%&gt;%</span> </span>
+<span id="cb43-89"><a href="#cb43-89"></a>  <span class="fu">do_it_all</span>(</span>
+<span id="cb43-90"><a href="#cb43-90"></a>    <span class="at">vars_to_select_func =</span> <span class="fu">c</span>(<span class="st">"individual_id"</span>, <span class="st">"date_egg"</span>, </span>
+<span id="cb43-91"><a href="#cb43-91"></a>           <span class="st">"species"</span>, <span class="st">"flipper_length_mm"</span>, <span class="st">"culmen_length_mm"</span>, <span class="st">"island"</span>),</span>
+<span id="cb43-92"><a href="#cb43-92"></a>    <span class="at">grouping_var_func =</span> args[<span class="dv">1</span>],</span>
+<span id="cb43-93"><a href="#cb43-93"></a>    <span class="at">summary_vars_func =</span> <span class="fu">c</span>(<span class="st">"flipper_length_mm"</span>,<span class="st">"culmen_length_mm"</span>),</span>
+<span id="cb43-94"><a href="#cb43-94"></a>    <span class="at">arrange_var_func =</span> <span class="st">"flipper_length_mm_mean"</span>,</span>
+<span id="cb43-95"><a href="#cb43-95"></a>    <span class="at">max_var_func =</span> <span class="st">"flipper_length_mm_mean"</span></span>
+<span id="cb43-96"><a href="#cb43-96"></a>  )</span>
+<span id="cb43-97"><a href="#cb43-97"></a></span>
+<span id="cb43-98"><a href="#cb43-98"></a><span class="fu">print</span>(output)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+
+<section id="section-62" class="title-slide slide level1 center">
+<h1></h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1"></a><span class="co"># Rscript get_max_group.R island</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+
+<section id="many-ways-to-extend" class="title-slide slide level1 center">
+<h1>Many Ways to Extend</h1>
+
+</section>
+
+<section id="and-easier-to" class="title-slide slide level1 center">
+<h1>And Easier to…</h1>
+
+</section>
+
+<section id="run-on-a-schedule" class="title-slide slide level1 center">
+<h1>Run on a Schedule</h1>
+
+</section>
+
+<section id="be-able-to-run-anywhere" class="title-slide slide level1 center">
+<h1>Be Able to Run Anywhere</h1>
+
+</section>
+
+<section id="mini-break-2" class="title-slide slide level1 center">
+<h1>Mini-Break?</h1>
+
+</section>
+
+<section id="building-data-pipelines" class="title-slide slide level1 center">
+<h1>Building Data Pipelines</h1>
+
+</section>
+
+<section id="some-ground-rules" class="title-slide slide level1 center">
+<h1>Some Ground Rules</h1>
+
+</section>
+
+<section id="dont-read-everything" class="title-slide slide level1 center">
+<h1>Don’t Read Everything</h1>
+
+</section>
+
+<section id="youll-get-the-link" class="title-slide slide level1 center">
+<h1>You’ll Get the Link</h1>
+
+</section>
+
+<section id="high-level-skim" class="title-slide slide level1 center">
+<h1>High-Level Skim</h1>
+
+</section>
+
+<section id="lets-go" class="title-slide slide level1 center">
+<h1>Let’s Go</h1>
+<div style="text-align: center; margin-top: 1em">
+<p><a href="https://mcmullarkey.github.io/data_engineering_and_validation_book/00_building_first_pipeline.html#what-you-would-do-with-a-local-file" data-preview-link="true" style="text-align: center">OPEN ACCESS TEXTBOOK</a></p>
+</div>
+</section>
+
+<section id="common-pitfalls" class="title-slide slide level1 center">
+<h1>Common Pitfalls</h1>
+
+</section>
+
+<section id="i-just-cant" class="title-slide slide level1 center">
+<h1>I Just Can’t</h1>
+
+</section>
+
+<section id="i-hear-you" class="title-slide slide level1 center">
+<h1>I Hear You</h1>
+
+</section>
+
+<section id="and" class="title-slide slide level1 center">
+<h1>And</h1>
+
+</section>
+
+<section id="behaviors-betray-priorities" class="title-slide slide level1 center">
+<h1>Behaviors Betray Priorities</h1>
+
+</section>
+
+<section id="you-probably-can" class="title-slide slide level1 center">
+<h1>You Probably Can</h1>
+
+</section>
+
+<section id="do-all-the-things" class="title-slide slide level1 center">
+<h1>Do All The Things</h1>
+
+</section>
+
+<section id="instead-1" class="title-slide slide level1 center">
+<h1>Instead</h1>
+
+</section>
+
+<section id="start-small" class="title-slide slide level1 center">
+<h1>Start Small</h1>
+
+</section>
+
+<section id="another-job" class="title-slide slide level1 center">
+<h1>Another Job</h1>
+
+</section>
+
+<section id="instead-2" class="title-slide slide level1 center">
+<h1>Instead</h1>
+
+</section>
+
+<section id="deprioritize-something" class="title-slide slide level1 center">
+<h1>Deprioritize Something</h1>
+
+</section>
+
+<section id="not-visible-enough" class="title-slide slide level1 center">
+<h1>Not Visible Enough</h1>
+
+</section>
+
+<section id="instead-3" class="title-slide slide level1 center">
+<h1>Instead</h1>
+
+</section>
+
+<section id="give-rewards" class="title-slide slide level1 center">
+<h1>Give Rewards</h1>
+
+</section>
+
+<section id="resources" class="title-slide slide level1 center">
+<h1>Resources</h1>
+<ul>
+<li class="fragment"><a href="https://blog.pragmaticengineer.com/what-is-data-engineering/" data-preview-link="true" style="text-align: center">What is data engineering?</a></li>
+<li class="fragment"><a href="https://mcmullarkey.github.io/data_engineering_and_validation_book/" data-preview-link="true" style="text-align: center">Data engineering with R</a></li>
+<li class="fragment"><a href="https://jeroenjanssens.com/dsatcl/" data-preview-link="true" style="text-align: center">Data Science at the Command Line</a></li>
+<li class="fragment"><a href="https://www.youtube.com/watch?v=pg19Z8LL06w" data-preview-link="true" style="text-align: center">Docker Crash Course</a></li>
+<li class="fragment"><a href="http://haines-lab.com/post/2022-01-23-automating-computational-reproducibility-with-r-using-renv-docker-and-github-actions/" data-preview-link="true" style="text-align: center">Github Actions with R Crash Course</a></li>
+<li class="fragment"><a href="https://www.youtube.com/playlist?list=PLhQjrBD2T380F_inVRXMIHCqLaNUd7bN4" data-preview-link="true" style="text-align: center">CS50x Lectures</a></li>
+<li class="fragment"><a href="https://quarto.org/docs/presentations/revealjs/" data-preview-link="true" style="text-align: center">Quarto Presenations</a></li>
+</ul>
+</section>
+
+<section id="a-final-thought" class="title-slide slide level1 center">
+<h1>A Final Thought</h1>
+
+</section>
+
+<section id="i-didnt-do-this-stuff" class="title-slide slide level1 center">
+<h1>I Didn’t Do This Stuff</h1>
+
+</section>
+
+<section id="i-want-more-for-yall" class="title-slide slide level1 center">
+<h1>I Want More for Y’all</h1>
+
+</section>
+
+<section id="thanks" class="title-slide slide level1 center">
+<h1>Thanks!</h1>
+
+</section>
+
+<section id="qa" class="title-slide slide level1 center">
+<h1>Q&amp;A</h1>
+
+</section>
+
+<section id="section-63" class="title-slide slide level1 center" data-background-image="https://images.pexels.com/photos/267394/pexels-photo-267394.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1">
+<h1></h1>
 <div class="footer footer-default">
 
 </div>
-</section></section>
+</section>
     </div>
   </div>
 

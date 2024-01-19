@@ -105,7 +105,7 @@ format:
 
 # But How?
 
-# Let's Talk About It
+# Data Engineering
 
 # Mini-Break
 
@@ -113,9 +113,10 @@ format:
 
 - What is data engineering?
 - Why is this process hard?
-- Taking engineering seriously
+- Properly rating engineering
 - Building data pipelines
 - Common pitfalls
+- Q&A
 
 # Definition
 
@@ -127,7 +128,9 @@ format:
 }
 ```
 
-# How?
+# Data Cleaning?
+
+# Not Quite
 
 ## Develop, implement, and maintain systems {.center}
 
@@ -137,7 +140,7 @@ format:
 }
 ```
 
-## Taking in raw data and producing data we can use {.center}
+## Consistently taking in raw data and producing usable data {.center}
 
 ```{css}
 .center h2 {
@@ -145,11 +148,63 @@ format:
 }
 ```
 
-# Is the Data Correct?
+# Example
 
-# Why Is This Hard?
+# {background-image="https://images.pexels.com/photos/267394/pexels-photo-267394.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"}
+
+# Raw Data? {background-image="https://images.pexels.com/photos/267394/pexels-photo-267394.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" background-opacity="0.7"}
+
+# {background-image="https://www.mdpi.com/informatics/informatics-05-00029/article_deploy/html/images/informatics-05-00029-g002a.png" background-size="contain" background-repeat="no-repeat"}
+
+# That's a Lie {background-image="https://www.mdpi.com/informatics/informatics-05-00029/article_deploy/html/images/informatics-05-00029-g002a.png" background-size="contain" background-repeat="no-repeat" background-opacity="0.7"}
+
+# How Do I Know? {background-image="https://www.mdpi.com/informatics/informatics-05-00029/article_deploy/html/images/informatics-05-00029-g002a.png" background-size="contain" background-repeat="no-repeat" background-opacity="0.5"}
+
+# {background-image="https://www.mdpi.com/informatics/informatics-05-00029/article_deploy/html/images/informatics-05-00029-g002a.png" background-size="contain" background-repeat="no-repeat"}
+
+# Actual Raw Data? {background-image="https://www.mdpi.com/informatics/informatics-05-00029/article_deploy/html/images/informatics-05-00029-g002a.png" background-size="contain" background-repeat="no-repeat" background-opacity="0.7"}
+
+# {background-image="https://images.pexels.com/photos/1793525/pexels-photo-1793525.jpeg"}
+
+# There's Whole Fields {background-image="https://images.pexels.com/photos/1793525/pexels-photo-1793525.jpeg"background-opacity="0.7"}
+
+# But Michael
+
+# {background-image="https://images.pexels.com/photos/5699516/pexels-photo-5699516.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"}
+
+# I Do Surveys {background-image="https://images.pexels.com/photos/5699516/pexels-photo-5699516.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" background-opacity="0.7"}
+
+# {background-image="https://images.pexels.com/photos/769525/pexels-photo-769525.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"}
+
+# Might Be Harder {background-image="https://images.pexels.com/photos/769525/pexels-photo-769525.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" background-opacity="0.7"}
+
+# I'm So Sorry
+
+::: {style="text-align: center; margin-top: 1em"}
+[QULATRICS DOES WHAT?](https://www.qualtrics.com/support/survey-platform/survey-module/question-options/recode-values/){preview-link="true" style="text-align: center"}
+:::
+
+# Yikes
+
+# {background-image="https://images.pexels.com/photos/2762083/pexels-photo-2762083.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"}
+
+# Be Honest {background-image="https://images.pexels.com/photos/2762083/pexels-photo-2762083.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" background-opacity="0.7"}
+
+# How Many CSVS? {background-image="https://images.pexels.com/photos/2762083/pexels-photo-2762083.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" background-opacity="0.5"}
+
+# {background-image="https://images.pexels.com/photos/10768025/pexels-photo-10768025.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"}
+
+# Need Systems {background-image="https://images.pexels.com/photos/10768025/pexels-photo-10768025.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" background-opacity="0.7"}
+
+# Mini-Break?
+
+# {background-image="https://images.pexels.com/photos/3345882/pexels-photo-3345882.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"}
+
+# Why Is This Hard? {background-image="https://images.pexels.com/photos/3345882/pexels-photo-3345882.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" background-opacity="0.7"}
 
 # Mostly Structural Factors
+
+# Not Part of Training
 
 # Too Many Jobs
 
@@ -157,39 +212,1228 @@ format:
 [HOW MANY?](https://mcmullarkey.github.io/mcm-blog/posts/2021-05-18-im-opting-out/#professor-is-at-least-13-jobs-i-counted){preview-link="true" style="text-align: center"}
 :::
 
-# Not Part of Training
-
-# Not Glamorous
-
 # Not Visible
 
 # Not Rewarded
 
 # Not Punished
 
-# Billion $ Market
+# Not Glamorous
 
-# Expensive Tools
+# At the Same Time
+
+# Highly Prioritized in Industry
+
+# Billion(s) $ Market
+
+# Selection Effects?
+
+# Lots of Tools
+
+# Lots of Expensive Tools
 
 # Over-engineering
 
-## Quarto
+# Are We Screwed?
 
-Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
+# Nope!
 
-## Bullets
+# I Got Y'all
 
-When you click the **Render** button a document will be generated that includes:
+::: {style="text-align: center; margin-top: 1em"}
+[OPEN ACCESS TEXTBOOK](https://mcmullarkey.github.io/data_engineering_and_validation_book/){preview-link="true" style="text-align: center"}
+:::
 
--   Content authored with markdown
--   Output from executable code
+# Can Reset Org Cultures
 
-## Code
+# Make Visible
 
-When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:
+# Reward Good Process
+
+# Implement Engineering Principles
+
+# Break
+
+# We Underrate Engineering
+
+# {background-image="https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"}
+
+# What is Coding For? {background-image="https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" background-opacity="0.7"}
+
+# {background-image="https://images.pexels.com/photos/6664246/pexels-photo-6664246.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"}
+
+# Uncertain {background-image="https://images.pexels.com/photos/6664246/pexels-photo-6664246.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" background-opacity="0.7"}
+
+# {background-image="https://images.pexels.com/photos/585418/pexels-photo-585418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"}
+
+# Certain {background-image="https://images.pexels.com/photos/585418/pexels-photo-585418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" background-opacity="0.7"}
+
+# {background-image="https://images.pexels.com/photos/220762/pexels-photo-220762.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"}
+
+# To Our Advantage {background-image="https://images.pexels.com/photos/220762/pexels-photo-220762.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" background-opacity="0.7"}
+
+# Implement Engineering Principles
+
+# {background-image="https://images.pexels.com/photos/225250/pexels-photo-225250.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"}
+
+# Nope {background-image="https://images.pexels.com/photos/225250/pexels-photo-225250.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" background-opacity="0.7"}
+
+# Engineering Principles
+
+# Stop Coding
+
+# Don't Repeat Yourself
+
+# Do One Thing Well
+
+# Assume Failure
+
+# Automate
+
+# Stop Coding
+
+# Look at Data Now
+
+# 
 
 ```{r}
-1 + 1
+#| echo: false
+
+library(tidyverse)
+library(palmerpenguins)
+library(janitor)
+
 ```
 
+
+```{r}
+#| echo: false
+
+penguins_raw %>% 
+  clean_names() %>% 
+  select(individual_id, date_egg, species) %>% 
+  arrange(individual_id, desc(date_egg)) %>% 
+  head()
+
+```
+
+
+# Sketch Ideal Data
+
+#
+
+```{r}
+#| echo: false
+
+penguins_raw %>% 
+  clean_names() %>% 
+  select(individual_id, date_egg, species) %>% 
+  arrange(individual_id, desc(date_egg)) %>% 
+  distinct(individual_id, .keep_all = TRUE) %>% 
+  head()
+
+```
+
+# Write Step by Step
+
+# Can Use Made-up Functions
+
+#
+
+```{r}
+#| echo: true
+
+# I have data with duplicate IDs in it right now
+
+# non_duplicated_data <- penguins_raw %>% 
+  # disapper_duplicates(most_recent = TRUE, keep_everything = TRUE)
+
+```
+
+# Saves Time
+
+# Good for Learning
+
+# By the Way
+
+#
+
+```{.r code-line-numbers="2-5,7|6|5|5-6"}
+
+penguins_raw %>% 
+  clean_names() %>% 
+  select(individual_id, date_egg, species) %>% 
+  arrange(individual_id, desc(date_egg)) %>% 
+  distinct(individual_id, .keep_all = TRUE) %>% 
+  head()
+
+```
+
+# Don't Repeat Yourself
+
+#
+
+```{.r code-line-numbers="2-7"}
+
+penguins_raw %>% 
+  clean_names() %>% 
+  select(individual_id, date_egg, species) %>% 
+  arrange(individual_id, desc(date_egg)) %>% 
+  distinct(individual_id, .keep_all = TRUE) %>% 
+  head()
+
+```
+
+#
+
+```{.r code-line-numbers="9-14"}
+
+penguins_raw %>% 
+  clean_names() %>% 
+  select(individual_id, date_egg, species) %>% 
+  arrange(individual_id, desc(date_egg)) %>% 
+  distinct(individual_id, .keep_all = TRUE) %>% 
+  head()
+
+penguins_raw_new %>% 
+  clean_names() %>% 
+  select(individual_id, date_egg, species) %>% 
+  arrange(individual_id, desc(date_egg)) %>% 
+  distinct(individual_id, .keep_all = TRUE) %>% 
+  head()
+
+```
+
+#
+
+```{.r code-line-numbers="16-21"}
+
+penguins_raw %>% 
+  clean_names() %>% 
+  select(individual_id, date_egg, species) %>% 
+  arrange(individual_id, desc(date_egg)) %>% 
+  distinct(individual_id, .keep_all = TRUE) %>% 
+  head()
+
+penguins_raw_new %>% 
+  clean_names() %>% 
+  select(individual_id, date_egg, species) %>% 
+  arrange(individual_id, desc(date_egg)) %>% 
+  distinct(individual_id, .keep_all = TRUE) %>% 
+  head()
+
+penguins_raw_old %>% 
+  clean_names() %>% 
+  select(individual_id, date_egg, species) %>% 
+  arrange(individual_id, desc(date_egg)) %>% 
+  distinct(individual_id, .keep_all = TRUE) %>% 
+  head()
+
+```
+
+# One Change?
+
+#
+
+```{.r code-line-numbers="5,12|19|5,12,19"}
+
+penguins_raw %>% 
+  clean_names() %>% 
+  select(individual_id, date_egg, species) %>% 
+  arrange(individual_id, date_egg) %>% 
+  distinct(individual_id, .keep_all = TRUE) %>% 
+  head()
+
+penguins_raw_new %>% 
+  clean_names() %>% 
+  select(individual_id, date_egg, species) %>% 
+  arrange(individual_id, date_egg) %>% 
+  distinct(individual_id, .keep_all = TRUE) %>% 
+  head()
+
+penguins_raw_old %>% 
+  clean_names() %>% 
+  select(individual_id, date_egg, species) %>% 
+  arrange(individual_id, desc(date_egg)) %>% 
+  distinct(individual_id, .keep_all = TRUE) %>% 
+  head()
+
+```
+
+# More Mistakes
+
+# More Work
+
+# Instead
+
+# Write a Function
+
+# How?
+
+# Do It Once
+
+#
+
+```{.r code-line-numbers="2-7"}
+
+penguins_raw %>% 
+  clean_names() %>% 
+  select(individual_id, date_egg, species) %>% 
+  arrange(individual_id, desc(date_egg)) %>% 
+  distinct(individual_id, .keep_all = TRUE) %>% 
+  head()
+
+```
+
+# Learn Syntax
+
+#
+
+```{.r code-line-numbers="3-7,12-16|2,11|9,11|9,11,18"}
+
+penguins_raw %>% 
+  clean_names() %>% 
+  select(individual_id, date_egg, species) %>% 
+  arrange(individual_id, desc(date_egg)) %>% 
+  distinct(individual_id, .keep_all = TRUE) %>% 
+  head()
+
+clean_penguins <- function(.data) {
+  
+  .data %>% 
+    clean_names() %>% 
+    select(individual_id, date_egg, species) %>% 
+    arrange(individual_id, desc(date_egg)) %>% 
+    distinct(individual_id, .keep_all = TRUE) %>% 
+    head()
+  
+}
+
+```
+
+# Use It Many Times
+
+#
+
+```{.r}
+
+clean_penguins <- function(.data) {
+  
+  .data %>% 
+    clean_names() %>% 
+    select(individual_id, date_egg, species) %>% 
+    arrange(individual_id, desc(date_egg)) %>% 
+    distinct(individual_id, .keep_all = TRUE) %>% 
+    head()
+  
+}
+
+```
+
+#
+
+```{.r code-line-numbers="7|3-5|3,7|4,7|5,7|3-5,7"}
+
+map(list(
+         penguins_raw, 
+         penguins_raw_new,
+         penguins_raw_old
+      ),
+    ~clean_penguins(.x)
+  )
+
+```
+
+#
+
+```{r}
+#| echo: false
+
+# Easter egg if you read the repo, this code breaks this rule!
+
+set.seed(33)
+penguins_raw_old <- penguins_raw %>% slice_sample(n = 100)
+penguins_raw_new <- penguins_raw %>% slice_sample(n = 100)
+
+
+```
+
+
+```{r}
+#| echo: true
+
+clean_penguins <- function(.data) {
+  
+  .data %>% 
+    clean_names() %>% 
+    select(individual_id, date_egg, species) %>% 
+    arrange(individual_id, desc(date_egg)) %>% 
+    distinct(individual_id, .keep_all = TRUE) %>% 
+    head()
+  
+}
+
+map(list(penguins_raw, 
+         penguins_raw_new,
+         penguins_raw_old),
+    ~clean_penguins(.x))
+
+```
+
+# We Can Do Even Better
+
+# Do One Thing Well
+
+# A Lot of Functions Look Like
+
+#
+
+```{.r code-line-numbers="1-20"}
+
+do_it_all <- function(.data) {
+  
+  .data %>% 
+    clean_names() %>% 
+    select(individual_id, date_egg, 
+           species, flipper_length_mm,
+           island) %>% 
+    arrange(individual_id, desc(date_egg)) %>% 
+    distinct(individual_id, .keep_all = TRUE) %>% 
+    group_by(island) %>% 
+    summarise(
+      mean_flipper_length = mean(flipper_length_mm, na.rm = TRUE),
+      sd_flipper_length = sd(flipper_length_mm, na.rm = TRUE)
+    ) %>% 
+    arrange(desc(mean_flipper_length), .by_group = TRUE) %>% 
+    slice_max(mean_flipper_length) %>% 
+    pull(island)
+  
+}
+
+```
+
+```{r}
+#| echo: false
+
+penguins_raw %>% 
+    clean_names() %>% 
+    select(individual_id, date_egg, 
+           species, flipper_length_mm,
+           island) %>% 
+    arrange(individual_id, desc(date_egg)) %>% 
+    distinct(individual_id, .keep_all = TRUE) %>% 
+    group_by(island) %>% 
+    summarise(
+      mean_flipper_length = mean(flipper_length_mm, na.rm = TRUE),
+      sd_flipper_length = sd(flipper_length_mm, na.rm = TRUE)
+    ) %>% 
+    arrange(desc(mean_flipper_length), .by_group = TRUE) %>% 
+    slice_max(mean_flipper_length) %>% 
+    pull(island)
+
+```
+
+# Hard to Read
+
+# Hard to Debug
+
+# Break it Down
+
+#
+
+```{.r code-line-numbers="1-20|4-8|9,10|11-16|17-18|4-8"}
+
+do_it_all <- function(.data) {
+  
+  .data %>% 
+    clean_names() %>% 
+    select(individual_id, date_egg, 
+           species, flipper_length_mm,
+           island) %>% 
+    arrange(individual_id, desc(date_egg)) %>% 
+    distinct(individual_id, .keep_all = TRUE) %>% 
+    group_by(island) %>% 
+    summarise(
+      mean_flipper_length = mean(flipper_length_mm, na.rm = TRUE),
+      sd_flipper_length = sd(flipper_length_mm, na.rm = TRUE)
+    ) %>% 
+    arrange(desc(mean_flipper_length), .by_group = TRUE) %>% 
+    slice_max(mean_flipper_length) %>% 
+    pull(island)
+  
+}
+
+```
+
+#
+
+```{.r}
+
+select_vars <- function(.data, vars_to_select) {
+  
+  .data %>% 
+    clean_names() %>% 
+    select(any_of(vars_to_select))
+
+}
+
+```
+
+#
+
+```{r}
+#| echo: false
+
+select_vars <- function(.data, vars_to_select) {
+  
+  .data %>% 
+    clean_names() %>% 
+    select(any_of(vars_to_select))
+
+}
+
+```
+
+```{r}
+#| echo: true
+
+penguins_selected <- penguins_raw %>% 
+  select_vars(vars_to_select = c("individual_id", "date_egg", 
+           "species", "flipper_length_mm", "culmen_length_mm",
+           "island")) %>% 
+  print()
+
+```
+
+#
+
+```{.r code-line-numbers="9,10"}
+
+do_it_all <- function(.data) {
+  
+  .data %>% 
+    clean_names() %>% 
+    select(individual_id, date_egg, 
+           species, flipper_length_mm,
+           island) %>% 
+    arrange(individual_id, desc(date_egg)) %>% 
+    distinct(individual_id, .keep_all = TRUE) %>% 
+    group_by(island) %>% 
+    summarise(
+      mean_flipper_length = mean(flipper_length_mm, na.rm = TRUE),
+      sd_flipper_length = sd(flipper_length_mm, na.rm = TRUE)
+    ) %>% 
+    arrange(desc(mean_flipper_length), .by_group = TRUE) %>% 
+    slice_max(mean_flipper_length) %>% 
+    pull(island)
+  
+}
+
+```
+
+#
+
+```{.r}
+
+get_only_latest <- function(.data) {
+  
+  .data %>% 
+    arrange(individual_id, desc(date_egg)) %>% 
+    distinct(individual_id, .keep_all = TRUE)
+
+}
+
+```
+
+#
+
+```{r}
+#| echo: false
+
+get_only_latest <- function(.data) {
+  
+  .data %>% 
+    arrange(individual_id, desc(date_egg)) %>% 
+    distinct(individual_id, .keep_all = TRUE)
+
+}
+
+```
+
+```{r}
+#| echo: true
+
+penguins_latest <- penguins_selected %>% 
+  get_only_latest() %>% 
+  print()
+
+```
+#
+
+```{.r code-line-numbers="11-16"}
+
+do_it_all <- function(.data) {
+  
+  .data %>% 
+    clean_names() %>% 
+    select(individual_id, date_egg, 
+           species, flipper_length_mm,
+           island) %>% 
+    arrange(individual_id, desc(date_egg)) %>% 
+    distinct(individual_id, .keep_all = TRUE) %>% 
+    group_by(island) %>% 
+    summarise(
+      mean_flipper_length = mean(flipper_length_mm, na.rm = TRUE),
+      sd_flipper_length = sd(flipper_length_mm, na.rm = TRUE)
+    ) %>% 
+    arrange(desc(mean_flipper_length), .by_group = TRUE) %>% 
+    slice_max(mean_flipper_length) %>% 
+    pull(island)
+  
+}
+
+```
+
+#
+
+```{.r}
+
+get_grouped_summary <- function(.data,
+                                grouping_var,
+                                summary_vars,
+                                arrange_var) {
+  
+  .data %>% 
+    group_by(.data[[grouping_var]]) %>% 
+    summarise(across(all_of(summary_vars),
+                     list(
+                       mean = ~mean(., na.rm = TRUE),
+                       sd = ~sd(., na.rm = TRUE),
+                       median = ~median(., na.rm = TRUE)
+                     )
+    )) %>% 
+    arrange(desc({{ arrange_var }}), .by_group = TRUE)
+
+}
+```
+
+#
+
+```{r}
+#| echo: false
+
+get_grouped_summary <- function(.data,
+                                grouping_var,
+                                summary_vars,
+                                arrange_var) {
+  
+  .data %>% 
+    group_by(.data[[grouping_var]]) %>% 
+    summarise(across(all_of(summary_vars),
+                     list(
+                       mean = ~mean(., na.rm = TRUE),
+                       sd = ~sd(., na.rm = TRUE),
+                       median = ~median(., na.rm = TRUE)
+                     )
+    )) %>% 
+    arrange(desc({{ arrange_var }}), .by_group = TRUE)
+
+}
+
+```
+
+```{r}
+#| echo: true
+
+penguins_summary <- penguins_latest %>% 
+  get_grouped_summary(
+    grouping_var = "island",
+    summary_vars = c("flipper_length_mm","culmen_length_mm"),
+    arrange_var = "flipper_length_mm_mean"
+  ) %>% 
+  print()
+
+```
+
+#
+
+```{.r code-line-numbers="17-18"}
+
+do_it_all <- function(.data) {
+  
+  .data %>% 
+    clean_names() %>% 
+    select(individual_id, date_egg, 
+           species, flipper_length_mm,
+           island) %>% 
+    arrange(individual_id, desc(date_egg)) %>% 
+    distinct(individual_id, .keep_all = TRUE) %>% 
+    group_by(island) %>% 
+    summarise(
+      mean_flipper_length = mean(flipper_length_mm, na.rm = TRUE),
+      sd_flipper_length = sd(flipper_length_mm, na.rm = TRUE)
+    ) %>% 
+    arrange(desc(mean_flipper_length), .by_group = TRUE) %>% 
+    slice_max(mean_flipper_length) %>% 
+    pull(island)
+  
+}
+
+```
+
+#
+
+```{.r}
+
+identify_max_group <- function(.data,
+                               max_var,
+                               group_var) {
+  .data %>%
+    slice_max(order_by = .data[[max_var]], n = 1) %>%
+    pull({{ group_var }})
+}
+
+```
+
+#
+
+```{r}
+#| echo: false
+
+identify_max_group <- function(.data,
+                               max_var,
+                               group_var) {
+  .data %>%
+    slice_max(order_by = .data[[max_var]], n = 1) %>%
+    pull({{ group_var }})
+}
+
+
+```
+
+```{r}
+#| echo: true
+
+penguins_summary %>% 
+  identify_max_group(
+    max_var = "flipper_length_mm_mean",
+    group_var = "island"
+  )
+
+```
+
+# Put It All Together
+
+#
+
+```{.r code-line-numbers="1-20"}
+
+do_it_all <- function(.data) {
+  
+  .data %>% 
+    clean_names() %>% 
+    select(individual_id, date_egg, 
+           species, flipper_length_mm,
+           island) %>% 
+    arrange(individual_id, desc(date_egg)) %>% 
+    distinct(individual_id, .keep_all = TRUE) %>% 
+    group_by(island) %>% 
+    summarise(
+      mean_flipper_length = mean(flipper_length_mm, na.rm = TRUE),
+      sd_flipper_length = sd(flipper_length_mm, na.rm = TRUE)
+    ) %>% 
+    arrange(desc(mean_flipper_length), .by_group = TRUE) %>% 
+    slice_max(mean_flipper_length) %>% 
+    pull(island)
+  
+}
+
+```
+
+#
+
+```{.r code-line-numbers="1-28|9-10|12-13|15-20|22-26|28"}
+
+do_it_all <- function(.data,
+                       vars_to_select_func,
+                       grouping_var_func,
+                       summary_vars_func,
+                       arrange_var_func,
+                       max_var_func) {
+  
+  selected_df <- .data %>% 
+    select_vars(vars_to_select = vars_to_select_func)
+  
+  latest_df <- selected_df %>% 
+    get_only_latest()
+  
+  group_summary_df <- latest_df %>%
+    get_grouped_summary(
+      grouping_var = grouping_var_func,
+      summary_vars = summary_vars_func,
+      arrange_var = arrange_var_func
+    )
+
+  max_group <- group_summary_df %>%
+    identify_max_group(
+      max_var = max_var_func,
+      group_var = grouping_var_func
+    )
+  
+  return(max_group)
+  
+}
+
+```
+
+#
+
+```{r}
+#| echo: false
+
+do_it_all <- function(.data,
+                       vars_to_select_func,
+                       grouping_var_func,
+                       summary_vars_func,
+                       arrange_var_func,
+                       max_var_func) {
+  
+  selected_df <- .data %>% 
+    select_vars(vars_to_select = vars_to_select_func)
+  
+  latest_df <- selected_df %>% 
+    get_only_latest()
+  
+  group_summary_df <- latest_df %>%
+    get_grouped_summary(
+      grouping_var = grouping_var_func,
+      summary_vars = summary_vars_func,
+      arrange_var = arrange_var_func
+    )
+
+  max_group <- group_summary_df %>%
+    identify_max_group(
+      max_var = max_var_func,
+      group_var = grouping_var_func
+    )
+  
+  return(max_group)
+  
+}
+
+```
+
+```{r}
+#| echo: true
+
+penguins_raw %>% 
+  do_it_all(
+    vars_to_select_func = c("individual_id", "date_egg", 
+           "species", "flipper_length_mm", "culmen_length_mm", "island"),
+    grouping_var_func = "island",
+    summary_vars_func = c("flipper_length_mm","culmen_length_mm"),
+    arrange_var_func = "flipper_length_mm_mean",
+    max_var_func = "flipper_length_mm_mean"
+  )
+
+```
+
+# I Had to Debug
+
+#
+
+```{.r code-line-numbers="1-28|15-26|12-13|28"}
+
+do_it_all <- function(.data,
+                       vars_to_select_func,
+                       grouping_var_func,
+                       summary_vars_func,
+                       arrange_var_func,
+                       max_var_func) {
+  
+  selected_df <- .data %>% 
+    select_vars(vars_to_select = vars_to_select_func)
+  
+  latest_df <- selected_df %>% 
+    get_only_latest()
+  
+  # group_summary_df <- latest_df %>%
+  #   get_grouped_summary(
+  #     grouping_var = grouping_var_func,
+  #     summary_vars = summary_vars_func,
+  #     arrange_var = arrange_var_func
+  #   )
+  # 
+  # max_group <- group_summary_df %>%
+  #   identify_max_group(
+  #     max_var = max_var_func,
+  #     group_var = grouping_var_func
+  #   )
+  
+  return(latest_df)
+  
+}
+
+```
+
+# Modular Functions
+
+# Subjective
+
+# Can Over-Engineer
+
+# Assume Failure
+
+# Ideal Data
+
+#
+
+```{r}
+#| echo: false
+
+penguins_raw %>% 
+  clean_names() %>% 
+  select(individual_id, date_egg, species) %>% 
+  arrange(individual_id, desc(date_egg)) %>% 
+  distinct(individual_id, .keep_all = TRUE) %>% 
+  head()
+
+```
+
+# How Sure Am I?
+
+# Need Tests
+
+# You Already Do
+
+# Error vs. Not
+
+# Ad Hoc
+
+# 
+
+```{r}
+#| echo: true
+
+penguins_latest %>% 
+  count(individual_id) %>% 
+  filter(n > 1)
+
+```
+
+# Automatic
+
+# More Later
+
+# Never 100%
+
+# Last Principle
+
+# Automate
+
+# More Conceptual
+
+# Use the Terminal
+
+#
+
+```{.r code-line-numbers="2|4-34|36-78|80-94"}
+
+# get_max_group.R
+
+# Main Function
+
+do_it_all <- function(.data,
+                       vars_to_select_func,
+                       grouping_var_func,
+                       summary_vars_func,
+                       arrange_var_func,
+                       max_var_func) {
+  
+  selected_df <- .data %>% 
+    select_vars(vars_to_select = vars_to_select_func)
+  
+  latest_df <- selected_df %>% 
+    get_only_latest()
+  
+  group_summary_df <- latest_df %>%
+    get_grouped_summary(
+      grouping_var = grouping_var_func,
+      summary_vars = summary_vars_func,
+      arrange_var = arrange_var_func
+    )
+
+  max_group <- group_summary_df %>%
+    identify_max_group(
+      max_var = max_var_func,
+      group_var = grouping_var_func
+    )
+  
+  return(max_group)
+  
+}
+
+# Helper Functions
+
+select_vars <- function(.data, vars_to_select) {
+  
+  .data %>% 
+    clean_names() %>% 
+    select(any_of(vars_to_select))
+
+}
+
+get_only_latest <- function(.data) {
+  
+  .data %>% 
+    arrange(individual_id, desc(date_egg)) %>% 
+    distinct(individual_id, .keep_all = TRUE)
+
+}
+
+get_grouped_summary <- function(.data,
+                                grouping_var,
+                                summary_vars,
+                                arrange_var) {
+  
+  .data %>% 
+    group_by(.data[[grouping_var]]) %>% 
+    summarise(across(all_of(summary_vars),
+                     list(
+                       mean = ~mean(., na.rm = TRUE),
+                       sd = ~sd(., na.rm = TRUE),
+                       median = ~median(., na.rm = TRUE)
+                     )
+    )) %>% 
+    arrange(desc({{ arrange_var }}), .by_group = TRUE)
+
+}
+
+identify_max_group <- function(.data,
+                               max_var,
+                               group_var) {
+  .data %>%
+    slice_max(order_by = .data[[max_var]], n = 1) %>%
+    pull({{ group_var }})
+}
+
+# Run Main Function
+
+library(palmerpenguins)
+
+output <- penguins_raw %>% 
+  do_it_all(
+    vars_to_select_func = c("individual_id", "date_egg", 
+           "species", "flipper_length_mm", "culmen_length_mm", "island"),
+    grouping_var_func = "island",
+    summary_vars_func = c("flipper_length_mm","culmen_length_mm"),
+    arrange_var_func = "flipper_length_mm_mean",
+    max_var_func = "flipper_length_mm_mean"
+  )
+
+print(output)
+
+```
+
+# 
+
+```{bash}
+#| echo: true
+
+# Rscript get_max_group.R
+
+```
+
+# Can Do Even Better
+
+#
+
+```{.r code-line-numbers="2|4-6|92"}
+
+# get_max_group.R
+
+# Take in command line arguments
+
+args <- commandArgs(trailingOnly = TRUE)
+
+# Main Function
+
+do_it_all <- function(.data,
+                       vars_to_select_func,
+                       grouping_var_func,
+                       summary_vars_func,
+                       arrange_var_func,
+                       max_var_func) {
+  
+  selected_df <- .data %>% 
+    select_vars(vars_to_select = vars_to_select_func)
+  
+  latest_df <- selected_df %>% 
+    get_only_latest()
+  
+  group_summary_df <- latest_df %>%
+    get_grouped_summary(
+      grouping_var = grouping_var_func,
+      summary_vars = summary_vars_func,
+      arrange_var = arrange_var_func
+    )
+
+  max_group <- group_summary_df %>%
+    identify_max_group(
+      max_var = max_var_func,
+      group_var = grouping_var_func
+    )
+  
+  return(max_group)
+  
+}
+
+# Helper Functions
+
+select_vars <- function(.data, vars_to_select) {
+  
+  .data %>% 
+    clean_names() %>% 
+    select(any_of(vars_to_select))
+
+}
+
+get_only_latest <- function(.data) {
+  
+  .data %>% 
+    arrange(individual_id, desc(date_egg)) %>% 
+    distinct(individual_id, .keep_all = TRUE)
+
+}
+
+get_grouped_summary <- function(.data,
+                                grouping_var,
+                                summary_vars,
+                                arrange_var) {
+  
+  .data %>% 
+    group_by(.data[[grouping_var]]) %>% 
+    summarise(across(all_of(summary_vars),
+                     list(
+                       mean = ~mean(., na.rm = TRUE),
+                       sd = ~sd(., na.rm = TRUE),
+                       median = ~median(., na.rm = TRUE)
+                     )
+    )) %>% 
+    arrange(desc({{ arrange_var }}), .by_group = TRUE)
+
+}
+
+identify_max_group <- function(.data,
+                               max_var,
+                               group_var) {
+  .data %>%
+    slice_max(order_by = .data[[max_var]], n = 1) %>%
+    pull({{ group_var }})
+}
+
+# Run Main Function
+
+library(palmerpenguins)
+
+output <- penguins_raw %>% 
+  do_it_all(
+    vars_to_select_func = c("individual_id", "date_egg", 
+           "species", "flipper_length_mm", "culmen_length_mm", "island"),
+    grouping_var_func = args[1],
+    summary_vars_func = c("flipper_length_mm","culmen_length_mm"),
+    arrange_var_func = "flipper_length_mm_mean",
+    max_var_func = "flipper_length_mm_mean"
+  )
+
+print(output)
+
+```
+
+# 
+
+```{bash}
+#| echo: true
+
+# Rscript get_max_group.R island
+
+```
+
+# Many Ways to Extend
+
+# And Easier to...
+
+# Run on a Schedule
+
+# Be Able to Run Anywhere
+
+# Mini-Break?
+
+# Building Data Pipelines
+
+# Some Ground Rules
+
+# Don't Read Everything
+
+# You'll Get the Link
+
+# High-Level Skim
+
+# Let's Go
+
+::: {style="text-align: center; margin-top: 1em"}
+[OPEN ACCESS TEXTBOOK](https://mcmullarkey.github.io/data_engineering_and_validation_book/00_building_first_pipeline.html#what-you-would-do-with-a-local-file){preview-link="true" style="text-align: center"}
+:::
+
+# Common Pitfalls
+
+# I Just Can't
+
+# I Hear You
+
+# And
+
+# Behaviors Betray Priorities
+
+# You Probably Can
+
+# Do All The Things
+
+# Instead
+
+# Start Small
+
+# Another Job
+
+# Instead
+
+# Deprioritize Something
+
+# Not Visible Enough
+
+# Instead
+
+# Give Rewards
+
+# Resources
+
+- [What is data engineering?](https://blog.pragmaticengineer.com/what-is-data-engineering/){preview-link="true" style="text-align: center"}
+- [Data engineering with R](https://mcmullarkey.github.io/data_engineering_and_validation_book/){preview-link="true" style="text-align: center"}
+- [Data Science at the Command Line](https://jeroenjanssens.com/dsatcl/){preview-link="true" style="text-align: center"}
+- [Docker Crash Course](https://www.youtube.com/watch?v=pg19Z8LL06w){preview-link="true" style="text-align: center"}
+- [Github Actions with R Crash Course](http://haines-lab.com/post/2022-01-23-automating-computational-reproducibility-with-r-using-renv-docker-and-github-actions/){preview-link="true" style="text-align: center"}
+- [CS50x Lectures](https://www.youtube.com/playlist?list=PLhQjrBD2T380F_inVRXMIHCqLaNUd7bN4){preview-link="true" style="text-align: center"}
+- [Quarto Presenations](https://quarto.org/docs/presentations/revealjs/){preview-link="true" style="text-align: center"}
+
+# A Final Thought
+
+# I Didn't Do This Stuff
+
+# I Want More for Y'all
+
+# Thanks!
+
+# Q&A
+
+# {background-image="https://images.pexels.com/photos/267394/pexels-photo-267394.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"}
 
