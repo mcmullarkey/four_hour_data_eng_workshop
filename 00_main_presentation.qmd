@@ -3,6 +3,7 @@ title: "Data Engineering"
 author: "Dr. Michael Mullarkey"
 format:
   revealjs:
+    logo: images/gerber_endowment_no_background.png
     incremental: true
     theme: blood
     transition: fade
@@ -20,8 +21,6 @@ format:
 # It's 2010
 
 # {background-image="https://images.pexels.com/photos/534216/pexels-photo-534216.jpeg"}
-
-# {background-image="http://news.bbc.co.uk/nol/shared/bsp/hi/share_prices/img/uk_us_share_index_786.gif" background-size="contain" background-repeat="no-repeat"}
 
 # {background-image="https://images.pexels.com/photos/4427629/pexels-photo-4427629.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"}
 
@@ -183,6 +182,8 @@ format:
 ::: {style="text-align: center; margin-top: 1em"}
 [QULATRICS DOES WHAT?](https://www.qualtrics.com/support/survey-platform/survey-module/question-options/recode-values/){preview-link="true" style="text-align: center"}
 :::
+
+# {background-image="images/qualtrics_recode_example.png" background-size="contain" background-repeat="no-repeat"}
 
 # Yikes
 
@@ -1417,14 +1418,13 @@ print(output)
 
 # Resources
 
-- [This presentation](https://mcmullarkey.github.io/four_hour_data_eng_workshop/00_main_presentation.html#/title-slide){preview-link="true" style="text-align: center"}
 - [What is data engineering?](https://blog.pragmaticengineer.com/what-is-data-engineering/){preview-link="true" style="text-align: center"}
 - [Data engineering with R](https://mcmullarkey.github.io/data_engineering_and_validation_book/){preview-link="true" style="text-align: center"}
 - [Data Science at the Command Line](https://jeroenjanssens.com/dsatcl/){preview-link="true" style="text-align: center"}
 - [Docker Crash Course](https://www.youtube.com/watch?v=pg19Z8LL06w){preview-link="true" style="text-align: center"}
 - [Github Actions with R Crash Course](http://haines-lab.com/post/2022-01-23-automating-computational-reproducibility-with-r-using-renv-docker-and-github-actions/){preview-link="true" style="text-align: center"}
 - [CS50x Lectures](https://www.youtube.com/playlist?list=PLhQjrBD2T380F_inVRXMIHCqLaNUd7bN4){preview-link="true" style="text-align: center"}
-- [Quarto Presentations](https://quarto.org/docs/presentations/revealjs/){preview-link="true" style="text-align: center"}
+- [UA Libraries' Data Cooperative Unit](https://data.library.arizona.edu/){preview-link="true" style="text-align: center"}
 
 # A Final Thought
 
